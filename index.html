@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>M Bakeri | The Collection by Chris Foster, Vero Beach</title>
+<meta name="description" content="M Bakeri, Chris Foster's European-inspired bakery in Vero Beach. Every piece in the collection is designed and signed off by Chris. Order online for pickup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<script>function mbImg(el){if(el.dataset.remote&&!el.dataset.tried){el.dataset.tried=1;el.src=el.dataset.remote}else el.parentNode.classList.add("noimg")}</script>
+<style>
+:root{
+  --white:#FFFFFF; --paper:#FBFAF7; --sand:#F3EBDD; --ink:#0E2E3A; --muted:#5A717B; --line:#DCE5E6;
+  --sea:#0F3F4C; --sea-2:#14596A; --aqua:#2A9D9A; --sun:#F2C14E; --coral:#E9765E; --on-sea:#FBF7EE; --on-sea-muted:#B6D3D3;
+  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --sans:"Jost","Futura","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --sign:"Mrs Saint Delafield","Snell Roundhand","Brush Script MT",cursive;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--white:#0F2630;--paper:#0C2029;--sand:#10262F;--ink:#EAF3F2;--muted:#9FBDC0;--line:#244550;--coral:#F2957F}}
+:root[data-theme="dark"]{--white:#0F2630;--paper:#0C2029;--sand:#10262F;--ink:#EAF3F2;--muted:#9FBDC0;--line:#244550;--coral:#F2957F}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 74px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--aqua);outline-offset:3px;border-radius:2px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.wrap{max-width:1280px;margin:0 auto;padding:0 36px}
+@media (max-width:640px){.wrap{padding:0 20px}}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;line-height:1.02;letter-spacing:-.015em}
+h2{font-size:clamp(2.6rem,6vw,5rem)}
+.kicker{font-family:var(--serif);font-style:italic;color:var(--aqua);font-size:1.15rem;margin:0 0 10px}
+.lede{color:var(--muted);max-width:54ch;margin:18px 0 0;font-size:1.06rem}
+.sig{font-family:var(--sign);font-weight:400;line-height:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 28px;font-weight:500;text-decoration:none;cursor:pointer;border:1px solid transparent;font-size:1rem;transition:background .2s,color .2s,border-color .2s}
+.btn.sun{background:var(--sun);color:#0F3F4C}.btn.sun:hover{background:#F6CF6E}
+.btn.ink{background:var(--ink);color:var(--paper)}.btn.ink:hover{opacity:.88}
+.btn.line{border-color:var(--ink);background:transparent}.btn.line:hover{background:var(--ink);color:var(--paper)}
+.btn.line-light{border-color:rgba(251,247,238,.55);color:var(--on-sea);background:transparent}.btn.line-light:hover{border-color:var(--on-sea)}
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#2A9D9A,#0F3F4C)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.noimg img{display:none}
+.ph.noimg::after{content:attr(data-alt);position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:14px;color:var(--on-sea);font-family:var(--serif);font-style:italic;font-size:1.15rem}
+
+/* Curtain */
+.curtain{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px;text-align:center}
+.curtain .panel{position:absolute;top:0;bottom:0;width:50.5%;background:repeating-linear-gradient(90deg,#2A9D9A 0 44px,#FBF7EE 44px 88px);transition:transform 1.3s cubic-bezier(.7,0,.2,1)}
+.curtain .panel.l{left:0}.curtain .panel.r{right:0}
+.curtain .stage{position:relative;z-index:2;background:var(--sea);color:var(--on-sea);padding:46px 46px 38px;border-radius:3px;max-width:540px;box-shadow:0 40px 80px -30px rgba(8,40,50,.6);transition:opacity .5s}
+.curtain .stage small{display:block;color:var(--sun);font-family:var(--serif);font-style:italic;font-size:1.2rem}
+.curtain .stage .t{font-family:var(--serif);font-size:clamp(2.8rem,8vw,4.8rem);line-height:.95;margin:14px 0 8px}
+.curtain .stage .t i{color:var(--sun)}
+.curtain .stage p{color:var(--on-sea-muted);margin:14px auto 30px;max-width:34ch}
+.curtain .go{display:flex;flex-direction:column;align-items:center;gap:14px}
+.curtain .quiet{background:none;border:0;color:var(--on-sea-muted);text-decoration:underline;text-underline-offset:4px;cursor:pointer;font-size:.95rem}
+.curtain.open .panel.l{transform:translateX(-101%)}.curtain.open .panel.r{transform:translateX(101%)}
+.curtain.open .stage{opacity:0;pointer-events:none}.curtain.gone{display:none}
+
+/* Header */
+header.top{position:fixed;left:0;right:0;top:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:26px;height:74px}
+.brand{font-family:var(--serif);font-size:1.7rem;text-decoration:none;letter-spacing:.02em}
+.brand i{color:var(--aqua)}
+nav.main{display:flex;gap:24px;margin-left:auto}
+nav.main a{text-decoration:none;font-size:.95rem;color:var(--muted)}
+nav.main a:hover{color:var(--ink)}
+.sound{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;font-size:.88rem}
+.bars{display:flex;align-items:flex-end;gap:2px;height:14px}
+.bars i{width:3px;background:currentColor;height:4px;border-radius:1px}
+.sound[aria-pressed="true"] .bars i{animation:eq 1s ease-in-out infinite}
+.sound[aria-pressed="true"] .bars i:nth-child(2){animation-delay:.2s}.sound[aria-pressed="true"] .bars i:nth-child(3){animation-delay:.4s}.sound[aria-pressed="true"] .bars i:nth-child(4){animation-delay:.1s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+.bagbtn{display:flex;align-items:center;gap:10px;background:var(--sun);color:#0F3F4C;border:0;border-radius:999px;padding:10px 18px;cursor:pointer;font-weight:500}
+.bagbtn .n{background:#0F3F4C;color:#FBF7EE;border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:.8rem}
+.bagbtn.bump{animation:bump .35s ease}@keyframes bump{50%{transform:scale(1.08)}}
+@media (max-width:960px){nav.main{display:none}.sound{margin-left:auto}.sound .lbl{display:none}}
+
+/* Hero: the designer */
+.hero{padding:120px 0 70px;background:var(--paper)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted);margin-bottom:26px}
+.status .dot{width:9px;height:9px;border-radius:50%;background:var(--aqua);box-shadow:0 0 0 4px color-mix(in srgb,var(--aqua) 25%,transparent)}
+.status.closed .dot{background:var(--sun);box-shadow:0 0 0 4px color-mix(in srgb,var(--sun) 30%,transparent)}
+.hero .pre{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--aqua);margin:0}
+.hero h1{font-size:clamp(4rem,11vw,10rem);line-height:.86;margin:6px 0 0;letter-spacing:-.035em}
+.hero h1 span{display:block;padding-left:.55em;font-style:italic}
+.hero .roles{display:flex;flex-wrap:wrap;gap:0;margin:30px 0 0;padding:0;list-style:none;border-top:1px solid var(--ink);max-width:520px}
+.hero .roles li{flex:1;padding:12px 0 0;font-family:var(--serif);font-size:1.2rem}
+.hero p.intro{color:var(--muted);max-width:46ch;margin:22px 0 32px;font-size:1.08rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.portrait{position:relative}
+.portrait::before{content:"";position:absolute;inset:-16px 16px 16px -16px;background:var(--sun)}
+.portrait .ph{position:relative;aspect-ratio:4/5}
+.portrait figcaption{position:absolute;left:-16px;bottom:28px;background:var(--paper);padding:12px 18px 10px;box-shadow:0 10px 30px -18px rgba(0,0,0,.4)}
+.portrait figcaption .sig{font-size:2.6rem;color:var(--ink)}
+.portrait figcaption small{display:block;color:var(--muted);font-size:.82rem;margin-top:2px}
+@media (max-width:900px){.hero{padding-top:100px}.hero .wrap{grid-template-columns:1fr;gap:56px}.portrait{max-width:440px;margin-left:16px}}
+
+/* Ticker */
+.ticker{background:var(--sun);color:#0F3F4C;overflow:hidden;white-space:nowrap;padding:14px 0;font-family:var(--serif);font-size:1.2rem;font-style:italic;border-bottom:6px solid transparent;border-image:repeating-linear-gradient(90deg,#2A9D9A 0 18px,#FBF7EE 18px 36px) 6}
+.ticker .track{display:inline-flex;gap:38px;animation:tick 36s linear infinite;padding-left:38px}
+.ticker .sun{font-style:normal}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* The show (runway) */
+.show{background:var(--sea);color:var(--on-sea);padding:100px 0 90px;overflow:hidden;position:relative}
+.show::before{content:"";position:absolute;left:50%;top:-10%;width:900px;height:900px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(251,247,238,.16),transparent 70%);pointer-events:none}
+.show-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;position:relative}
+.show-head .kicker{color:var(--sun)}
+.show-head .lede{color:var(--on-sea-muted)}
+.show-ctrl{display:flex;gap:10px;align-items:center}
+.show-ctrl button{width:48px;height:48px;border-radius:50%;border:1px solid rgba(251,247,238,.5);background:transparent;color:var(--on-sea);cursor:pointer;font-size:1.2rem}
+.show-ctrl button:hover{background:var(--on-sea);color:var(--sea)}
+.show-ctrl .auto{width:auto;border-radius:999px;padding:0 18px;font-size:.9rem}
+.runway{position:relative;margin-top:50px}
+.runway::after{content:"";position:absolute;left:0;right:0;bottom:118px;height:64px;background:linear-gradient(180deg,rgba(251,247,238,.10),rgba(251,247,238,.02));border-top:1px solid rgba(251,247,238,.25);pointer-events:none}
+.track-r{display:flex;gap:44px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px calc(50vw - 190px) 30px;scrollbar-width:none;position:relative;z-index:1}
+.track-r::-webkit-scrollbar{display:none}
+.look{flex:0 0 380px;scroll-snap-align:center;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s;transform:scale(.86);opacity:.42}
+.look.on{transform:scale(1);opacity:1}
+.look .ph{aspect-ratio:3/4;border-radius:2px;box-shadow:0 40px 60px -30px rgba(0,0,0,.6)}
+.look .num{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 4px;font-size:.88rem;color:var(--on-sea-muted)}
+.look .num b{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--sun);font-size:1.1rem}
+.look h3{font-size:1.9rem;line-height:1.1}
+.look p{color:var(--on-sea-muted);margin:8px 0 14px;font-size:.95rem}
+.look .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid rgba(251,247,238,.25);padding-top:14px}
+.look .approved{display:flex;flex-direction:column;line-height:1.1}
+.look .approved .sig{font-size:2rem;color:var(--on-sea)}
+.look .approved small{font-size:.75rem;color:var(--on-sea-muted)}
+.look .add-l{border:1px solid var(--on-sea);background:transparent;color:var(--on-sea);border-radius:999px;padding:9px 16px;cursor:pointer;font-weight:500;white-space:nowrap}
+.look .add-l:hover{background:var(--on-sea);color:var(--sea)}
+@media (max-width:640px){.look{flex-basis:78vw}.track-r{padding:20px 11vw 30px;gap:22px}.look h3{font-size:1.6rem}}
+
+/* The designer */
+.designer{padding:110px 0;background:var(--sand)}
+.designer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.designer .big{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.3;margin:0 0 24px}
+.designer p{color:var(--muted);max-width:52ch;margin:0 0 18px;line-height:1.7}
+.path{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(3,1fr);counter-reset:p}
+.path li{border-top:1px solid var(--ink);padding-top:14px;counter-increment:p}
+.path li::before{content:counter(p);display:block;color:var(--aqua);font-size:.82rem}
+.path b{font-family:var(--serif);font-weight:400;font-size:1.4rem;display:block}
+.path span{color:var(--muted);font-size:.88rem}
+.signoff{background:var(--white);padding:34px;border:1px solid var(--line)}
+.signoff h3{font-size:1.9rem;margin-bottom:6px}
+.signoff ol{list-style:none;padding:0;margin:22px 0 0;counter-reset:s}
+.signoff li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line);counter-increment:s}
+.signoff li::before{content:counter(s);font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--aqua);line-height:1}
+.signoff li b{font-family:var(--serif);font-weight:500;font-size:1.15rem;display:block}
+.signoff li span{color:var(--muted);font-size:.93rem}
+.signoff .sig{font-size:3rem;margin-top:16px;display:block}
+@media (max-width:900px){.designer .wrap{grid-template-columns:1fr;gap:44px}}
+
+/* Collection (menu) */
+.collection{padding:110px 0 80px;background:var(--white)}
+.tabs{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);z-index:20;background:var(--white);margin:38px 0 0;padding:12px 0;border-bottom:1px solid var(--line);display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap;border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 16px;cursor:pointer;font-size:.93rem}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tabs .sep{width:1px;background:var(--line);margin:4px 6px;flex:none}
+.tab.filter[aria-pressed="true"]{background:var(--aqua);border-color:var(--aqua);color:#fff}
+.cat{display:grid;grid-template-columns:300px 1fr;gap:56px;padding:56px 0;border-top:1px solid var(--line)}
+.cat:first-child{border-top:0}
+.cat-h{position:sticky;top:150px;align-self:start}
+.cat-h h3{font-size:2.3rem;font-style:italic}
+.cat-h p{color:var(--muted);margin:10px 0 0;font-size:.95rem}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px dotted color-mix(in srgb,var(--ink) 25%,transparent)}
+.row .th{width:58px;height:58px;border-radius:50%}
+.row.nt{grid-template-columns:1fr auto}
+.row h4{font-size:1.22rem;font-weight:500;line-height:1.25;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.row .ds{margin:3px 0 0;color:var(--muted);font-size:.93rem;max-width:56ch}
+.row .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;align-items:center}
+.row .side{display:flex;align-items:center;gap:14px}
+.row .price{font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap}
+.seal{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;color:var(--aqua)}
+.seal i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--aqua);font-family:var(--sign);font-style:normal;font-size:1.05rem;line-height:1;padding-top:3px}
+.plus{width:40px;height:40px;border-radius:50%;border:1px solid var(--ink);background:transparent;font-size:1.3rem;line-height:1;cursor:pointer;display:grid;place-items:center;flex:none}
+.plus:hover{background:var(--ink);color:var(--paper)}
+.plus:disabled{opacity:.3;cursor:not-allowed;background:transparent;color:inherit}
+.plus.wide{width:auto;padding:0 16px;font-size:.88rem;border-radius:999px}
+.pill{font-size:.72rem;padding:2px 9px;border-radius:999px;font-family:var(--sans);font-weight:500}
+.pill.best{background:var(--coral);color:#fff}.pill.new{background:var(--sun);color:#0F3F4C}.pill.lk{background:var(--sea);color:var(--on-sea)}
+.tag{font-size:.74rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.tag.gf,.tag.pb,.tag.v{border-color:color-mix(in srgb,var(--aqua) 55%,transparent);color:var(--aqua)}
+.left{font-size:.8rem;color:var(--coral)}
+@media (max-width:860px){.cat{grid-template-columns:1fr;gap:10px;padding:40px 0}.cat-h{position:static}.row{grid-template-columns:auto 1fr;gap:12px}.row.nt{grid-template-columns:1fr}.row .th{width:50px;height:50px}.row .side{grid-column:1/-1;justify-content:space-between}.row.nt .side{grid-column:1}}
+
+/* Couture cakes */
+.cakes{padding:110px 0;background:var(--sand)}
+.cakes .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:start}
+.cakes .ph{aspect-ratio:4/5;margin-top:34px;border-radius:2px}
+.builder{background:var(--white);border:1px solid var(--line);padding:34px}
+fieldset{border:0;padding:0;margin:0 0 24px}
+legend{font-weight:500;margin-bottom:12px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:block;border:1px solid var(--line);border-radius:2px;padding:9px 13px;cursor:pointer;font-size:.92rem}
+.opt span small{display:block;color:var(--muted);font-size:.78rem}
+.opt input:checked+span{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.opt input:focus-visible+span{outline:2px solid var(--aqua);outline-offset:2px}
+label.f{display:block;font-weight:500;margin-bottom:8px}
+.inp{width:100%;border:1px solid var(--line);border-radius:2px;padding:12px 14px;background:var(--paper)}
+.inp:focus{outline:none;border-color:var(--ink)}
+.total-row{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid var(--line);padding-top:22px;flex-wrap:wrap}
+.total-row .big{font-family:var(--serif);font-size:2.1rem}
+.total-row small{display:block;color:var(--muted)}
+@media (max-width:900px){.cakes .wrap{grid-template-columns:1fr;gap:20px}.cakes .ph{max-width:420px;aspect-ratio:1}}
+
+/* Atmosphere */
+.atmos{position:relative;color:var(--on-sea);background:var(--sea);min-height:64vh;display:flex;align-items:center;overflow:hidden}
+.atmos .ph{position:absolute;inset:0}
+.atmos::after{content:"";position:absolute;inset:0;background:rgba(10,52,64,.55)}
+.atmos .wrap{position:relative;z-index:2;text-align:center;padding-top:100px;padding-bottom:100px}
+.atmos blockquote{margin:0 auto;max-width:22ch;font-family:var(--serif);font-style:italic;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.12}
+.atmos p{margin:24px auto 0;max-width:46ch;opacity:.9}
+
+/* Catering */
+.catering{padding:110px 0;background:var(--white)}
+.cater-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:44px}
+.pkg{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:20px 0;border-top:1px solid var(--line)}
+.pkg:last-child{border-bottom:1px solid var(--line)}
+.pkg h3{font-size:1.45rem}
+.pkg p{margin:0;color:var(--muted);grid-column:1}
+.pkg .pp{grid-row:1/3;grid-column:2;text-align:right;font-variant-numeric:tabular-nums}
+.pkg .pp small{display:block;color:var(--muted)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .full{grid-column:1/-1}
+.done{border:1px solid var(--line);padding:28px}
+.err{color:var(--coral);font-size:.88rem;min-height:1em}
+@media (max-width:820px){.cater-grid{grid-template-columns:1fr;gap:40px}.form{grid-template-columns:1fr}}
+
+/* Front row */
+.frontrow{padding:110px 0;background:var(--paper)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:46px}
+blockquote.q{margin:0;border-top:1px solid var(--ink);padding-top:22px}
+blockquote.q p{font-family:var(--serif);font-size:1.32rem;line-height:1.4;font-style:italic;margin:0 0 14px}
+blockquote.q cite{font-style:normal;color:var(--muted);font-size:.92rem}
+@media (max-width:820px){.quotes{grid-template-columns:1fr;gap:36px}}
+
+/* Visit */
+.visit{background:var(--sea);color:var(--on-sea);padding:100px 0 56px}
+.visit .grid3{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px}
+.visit h3{font-size:1.25rem;margin-bottom:10px;color:var(--sun);font-style:italic}
+.visit p,.visit dd{color:var(--on-sea-muted);margin:0}
+.visit a{color:var(--on-sea)}
+.hours{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 18px}
+.hours dt{color:var(--on-sea)}
+.foot{border-top:1px solid rgba(242,193,78,.35);margin-top:64px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.86rem;color:var(--on-sea-muted)}
+.foot a{color:var(--sun)}
+@media (max-width:820px){.visit .grid3{grid-template-columns:1fr;gap:34px}}
+
+/* Bag, sheet, toast */
+.scrim{position:fixed;inset:0;background:rgba(8,34,44,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:60}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(450px,100%);background:var(--white);z-index:70;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.on{transform:none}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:22px 26px;border-bottom:1px solid var(--line)}
+.dh h2{font-size:1.9rem;font-style:italic}
+.x{border:0;background:transparent;font-size:1.7rem;cursor:pointer;line-height:1;padding:4px 8px;color:var(--muted)}
+.db{flex:1;overflow:auto;padding:6px 26px 20px}
+.bline{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.bline b{font-family:var(--serif);font-weight:500;font-size:1.06rem;display:block;line-height:1.25}
+.bline small{color:var(--muted);display:block;font-size:.85rem}
+.qty{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qty button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer}
+.pair{margin:18px 0 6px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border:1px dashed var(--aqua);font-size:.92rem}
+.pair small{display:block;color:var(--muted)}
+.mini{border:1px solid var(--ink);background:transparent;border-radius:999px;padding:6px 12px;cursor:pointer;font-size:.85rem}
+.df{border-top:1px solid var(--line);padding:18px 26px 22px;display:grid;gap:12px}
+.sum{display:flex;justify-content:space-between;color:var(--muted);font-size:.95rem}
+.sum.t{color:var(--ink);font-weight:600;font-size:1.08rem}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg label{flex:1;text-align:center;cursor:pointer;position:relative}
+.seg input{position:absolute;opacity:0}
+.seg span{display:block;padding:7px 10px;border-radius:999px;font-size:.9rem}
+.seg input:checked+span{background:var(--ink);color:var(--paper)}
+.empty{text-align:center;padding:60px 10px;color:var(--muted)}
+.empty b{display:block;font-family:var(--serif);font-size:1.6rem;color:var(--ink);font-weight:400;font-style:italic;margin-bottom:8px}
+.sheet{position:fixed;inset:0;z-index:75;display:none;align-items:center;justify-content:center;padding:20px}
+.sheet.on{display:flex}
+.sheet .bg{position:absolute;inset:0;background:rgba(8,34,44,.5)}
+.sheet .card{position:relative;z-index:2;background:var(--white);width:min(460px,100%);max-height:90vh;overflow:auto;padding:28px}
+.sheet h3{font-size:1.7rem;margin-bottom:4px}
+@media (max-width:520px){.sheet{align-items:flex-end;padding:0}.sheet .card{border-radius:10px 10px 0 0;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 24px)}}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);transform:translate(-50%,20px);background:var(--sea);color:var(--on-sea);padding:12px 22px;border-radius:999px;opacity:0;transition:.25s;z-index:90;font-size:.95rem;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* Phone alert (demo of what the bakery receives) */
+.alert{position:fixed;top:calc(env(safe-area-inset-top,0px) + 86px);right:22px;z-index:95;width:330px;background:rgba(250,250,250,.97);color:#1b1b1b;border-radius:18px;padding:14px 16px;box-shadow:0 24px 60px -20px rgba(0,0,0,.45);transform:translateY(-20px);opacity:0;transition:.35s;pointer-events:none;font-size:.9rem}
+.alert.on{transform:none;opacity:1;pointer-events:auto}
+.alert .ah{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#666;margin-bottom:6px}
+.alert .ah i{width:20px;height:20px;border-radius:5px;background:#0F3F4C;color:#F2C14E;display:grid;place-items:center;font-style:italic;font-family:var(--serif);font-size:.8rem}
+.alert b{display:block;margin-bottom:2px}
+.alert small{display:block;margin-top:8px;color:#777;font-size:.74rem}
+
+/* Mila */
+.ask{position:fixed;right:22px;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);z-index:55;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.teaser{background:var(--white);border:1px solid var(--line);border-radius:14px 14px 4px 14px;padding:14px 30px 14px 16px;max-width:280px;font-size:.93rem;box-shadow:0 18px 40px -20px rgba(0,0,0,.4);display:none;position:relative;cursor:pointer}
+.teaser.on{display:block;animation:rise .35s ease}
+.teaser .tx{position:absolute;top:4px;right:6px;border:0;background:none;cursor:pointer;color:var(--muted);font-size:1.1rem}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+.askbtn{display:flex;align-items:center;gap:10px;background:var(--sea);color:var(--on-sea);border:0;border-radius:999px;padding:8px 20px 8px 8px;cursor:pointer;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);font-weight:500}
+.av{width:36px;height:36px;border-radius:50%;background:var(--sun);color:#0F3F4C;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:1.15rem;flex:none}
+.chat{position:fixed;right:22px;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);width:400px;height:min(640px,calc(100vh - 120px));background:var(--white);border:1px solid var(--line);border-radius:10px;z-index:80;display:none;flex-direction:column;box-shadow:0 30px 70px -25px rgba(0,0,0,.5);overflow:hidden}
+.chat.on{display:flex;animation:rise .25s ease}
+.ch{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--sea);color:var(--on-sea)}
+.ch b{display:block;font-family:var(--serif);font-weight:500;font-size:1.12rem;line-height:1.2}
+.ch small{color:var(--on-sea-muted);font-size:.82rem}
+.ch .x{margin-left:auto;color:var(--on-sea-muted)}
+.msgs{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:86%;padding:10px 14px;border-radius:14px;font-size:.95rem;line-height:1.5}
+.m.bot{background:var(--paper);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.m.me{background:var(--sea);color:var(--on-sea);border-bottom-right-radius:4px;align-self:flex-end}
+.m ul{margin:6px 0 0;padding-left:18px}
+.m a{color:var(--aqua)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-self:flex-start;max-width:100%}
+.chip{border:1px solid var(--ink);background:transparent;border-radius:999px;padding:6px 12px;font-size:.85rem;cursor:pointer}
+.chip:hover{background:var(--ink);color:var(--paper)}
+.chip.team{border-color:var(--aqua);color:var(--aqua)}
+.typing{display:flex;gap:4px;padding:14px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{50%{opacity:.25}}
+.cf{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+.cf input{flex:1;border:1px solid var(--line);border-radius:999px;padding:10px 16px;background:var(--paper)}
+.cf input:focus{outline:none;border-color:var(--ink)}
+.cf button{border:0;background:var(--sun);color:#0F3F4C;border-radius:999px;padding:0 18px;cursor:pointer;font-weight:500}
+@media (max-width:520px){.chat{right:0;left:0;bottom:0;top:0;width:auto;height:auto;border-radius:0;border:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.ask{right:14px}.askbtn .lbl{display:none}.askbtn{padding:6px}.alert{left:12px;right:12px;width:auto}}
+</style>
+</head>
+<body class="locked">
+<div class="curtain" id="curtain" role="dialog" aria-label="Welcome to M Bakeri">
+  <div class="panel l"></div><div class="panel r"></div>
+  <div class="stage">
+    <small>Chris Foster presents</small>
+    <div class="t"><i>M</i> Bakeri<br>The Collection</div>
+    <p>European pastry on a Vero Beach runway. Every piece designed and signed off by Chris.</p>
+    <div class="go"><button class="btn sun" id="enterMusic">Enter the show with music</button><button class="quiet" id="enterQuiet">Enter without sound</button></div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home"><i>M</i> Bakeri</a>
+    <nav class="main" aria-label="Main">
+      <a href="#show">The show</a><a href="#designer">The designer</a><a href="#collection">Order</a><a href="#cakes">Couture cakes</a><a href="#catering">Catering</a><a href="#visit">Visit</a>
+    </nav>
+    <button class="sound" id="soundBtn" aria-pressed="false" aria-label="Music"><span class="bars"><i></i><i></i><i></i><i></i></span><span class="lbl" id="soundLbl">Music off</span></button>
+    <button class="bagbtn" id="bagBtn" aria-label="Open your bag">Bag <span class="n" id="bagCount">0</span></button>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="status" id="status"><span class="dot"></span><span id="statusText">Checking hours</span></div>
+        <p class="pre">Chris Foster presents</p>
+        <h1>The <span>Collection.</span></h1>
+        <ul class="roles" aria-label="Chris Foster"><li>Model</li><li>Entrepreneur</li><li>Baker</li></ul>
+        <p class="intro">Chris walked runways and produced live shows before he opened M Bakeri. Now the bakery case is his collection: European pastry, tailored in Vero Beach, and nothing goes out until he has signed off on it.</p>
+        <div class="ctas"><a class="btn ink" href="#show">Watch the show</a><a class="btn line" href="#collection">Order for pickup</a></div>
+      </div>
+      <figure class="portrait" style="margin:0">
+        <div class="ph" data-alt="Chris Foster"><img src="images/chris-expand-1a.jpg" data-remote="https://mbakerillc.com/wp-content/uploads/2024/07/chris-expand-1a.jpg" alt="Chris Foster, founder of M Bakeri" onerror="mbImg(this)"></div>
+        <figcaption><span class="sig">Chris Foster</span><small>Founder and creative director</small></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="New this season"><div class="track" id="ticker"></div></div>
+
+  <section class="show" id="show">
+    <div class="wrap">
+      <div class="show-head">
+        <div><p class="kicker">The Vero Beach collection</p><h2>On the runway</h2><p class="lede">Seven signature looks, each designed by Chris and approved before it reaches the case. Add any look straight to your bag.</p></div>
+        <div class="show-ctrl"><button id="prevLook" aria-label="Previous look">←</button><button id="nextLook" aria-label="Next look">→</button><button class="auto" id="autoShow" aria-pressed="false">Play the show</button></div>
+      </div>
+    </div>
+    <div class="runway"><div class="track-r" id="runway"></div></div>
+  </section>
+
+  <section class="designer" id="designer">
+    <div class="wrap">
+      <div>
+        <p class="kicker">The designer</p>
+        <h2 style="margin-bottom:26px">Chris Foster</h2>
+        <p class="big">He calls M Bakeri an intuitive space, where new dishes come to life by trusting instinct.</p>
+        <p>Chris grew up around his parents' passion for food, design and art, and years of travel shaped his palate. He modeled, then founded a live-entertainment production company known for big shows.</p>
+        <p>M Bakeri is the show he chose to keep running: a bakery where every cake, tart and quiche is a reflection of the person who made it.</p>
+        <ol class="path" aria-label="Chris's path"><li><b>Runway</b><span>Model</span></li><li><b>Stage</b><span>Live production</span></li><li><b>Kitchen</b><span>M Bakeri</span></li></ol>
+      </div>
+      <div class="signoff">
+        <h3>How a piece makes the collection</h3>
+        <p style="margin:0">Like a look before a show, every item passes through Chris before it is sold.</p>
+        <ol>
+          <li><div><b>Inspired</b><span>An idea from Paris, the Mediterranean or the coast outside the door.</span></div></li>
+          <li><div><b>Fitted</b><span>Tested in the kitchen until flavor, texture and look are right.</span></div></li>
+          <li><div><b>Signed off</b><span>Chris approves it. Only then does it join the collection and carry his mark.</span></div></li>
+        </ol>
+        <span class="sig" aria-label="Approved by Chris Foster">Chris Foster</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="collection" id="collection">
+    <div class="wrap">
+      <p class="kicker">Order for pickup</p>
+      <h2>The full collection</h2>
+      <p class="lede">Every item below carries Chris's mark. Choose your pickup time at checkout; coffee is made when you arrive.</p>
+      <div class="tabs" role="toolbar" aria-label="Menu sections and filters" id="tabs"></div>
+      <div id="menu"></div>
+    </div>
+  </section>
+
+  <section class="cakes" id="cakes">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Made to measure</p>
+        <h2>Couture cakes</h2>
+        <p class="lede">Every cake in the collection can be cut to your occasion. Choose the flavor, size and finish, pay a 50% deposit, and pick it up from two days out.</p>
+        <div class="ph" data-alt="French macarons"><img src="images/maca-post-1a.jpg" data-remote="https://mbakerillc.com/wp-content/uploads/2020/04/maca-post-1a.jpg" alt="" loading="lazy" onerror="mbImg(this)"></div>
+      </div>
+      <form class="builder" id="cakeForm" novalidate>
+        <fieldset><legend>Flavor</legend><div class="opts" id="cakeFlavor"></div></fieldset>
+        <fieldset><legend>Size</legend><div class="opts" id="cakeSize"></div></fieldset>
+        <fieldset><legend>Finish</legend><div class="opts" id="cakeFinish"></div></fieldset>
+        <div style="margin-bottom:22px"><label class="f" for="cakeMsg">Message on the cake <span style="color:var(--muted);font-weight:400">(optional, 30 characters)</span></label><input class="inp" id="cakeMsg" maxlength="30" placeholder="Joyeux anniversaire, Lena"></div>
+        <div style="margin-bottom:24px"><label class="f" for="cakeDate">Pickup day</label><select class="inp" id="cakeDate"></select></div>
+        <div class="total-row"><div><span class="big" id="cakeTotal">$0</span><small id="cakeDep"></small></div><button class="btn ink" type="submit">Add cake to bag</button></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="atmos">
+    <div class="ph" data-alt=""><img src="images/mbak-side-panel-1.jpg" data-remote="https://mbakerillc.com/wp-content/uploads/2022/08/mbak-side-panel-1.jpg" alt="" loading="lazy" onerror="mbImg(this)"></div>
+    <div class="wrap"><blockquote>Authentic haute cuisine and European flavors meet Vero Beach's coastal flair.</blockquote><p>Single-origin coffee, sustainable ingredients and ethically sourced produce.</p></div>
+  </section>
+
+  <section class="catering" id="catering">
+    <div class="wrap">
+      <p class="kicker">Private shows</p>
+      <h2>Catering and events</h2>
+      <p class="lede">Bring the collection to your table. Send the date and headcount and the team replies within one business day.</p>
+      <div class="cater-grid">
+        <div>
+          <div class="pkg"><h3>Pastry and sweets tray</h3><p>Cookies, lemon thyme bars, brownies and sweet bread, arranged.</p><div class="pp">$8<small>per guest</small></div></div>
+          <div class="pkg"><h3>Quiche brunch</h3><p>Lorraine, Mediterranean and smoked salmon quiche with fresh greens.</p><div class="pp">$16<small>per guest</small></div></div>
+          <div class="pkg"><h3>Lunch platter</h3><p>Italian and Mediterranean wraps, lemon basil chicken salad, BLTs.</p><div class="pp">$19<small>per guest</small></div></div>
+          <div class="pkg"><h3>Hors d'oeuvres and dessert table</h3><p>Designed around your event, with a centerpiece cake.</p><div class="pp">Quote</div></div>
+        </div>
+        <div id="caterWrap">
+          <form class="form" id="caterForm" novalidate>
+            <div><label class="f" for="cName">Name</label><input class="inp" id="cName" autocomplete="name"></div>
+            <div><label class="f" for="cEmail">Email</label><input class="inp" id="cEmail" type="email" autocomplete="email"></div>
+            <div><label class="f" for="cDate">Event date</label><input class="inp" id="cDate" type="date"></div>
+            <div><label class="f" for="cGuests">Guests</label><input class="inp" id="cGuests" type="number" min="6" placeholder="25"></div>
+            <div class="full"><label class="f" for="cNotes">What are you planning?</label><textarea class="inp" id="cNotes" rows="3" placeholder="Sunday brunch on the boat, two vegan guests"></textarea></div>
+            <div class="full err" id="cErr" role="alert"></div>
+            <div class="full"><button class="btn ink" type="submit">Request a quote</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="frontrow">
+    <div class="wrap">
+      <p class="kicker">Front row</p>
+      <h2>Vero needed something like this</h2>
+      <div class="quotes">
+        <blockquote class="q"><p>"That s'mores croissant is insane. The employees remember my name and my coffee."</p><cite>Dana Bryan, local</cite></blockquote>
+        <blockquote class="q"><p>"An adorable walk-up with amazing coffee and pastries. I had a brioche custard bun and a cortado."</p><cite>Haley McQueen, local</cite></blockquote>
+        <blockquote class="q"><p>"A place where you can make friends for life. I highly recommend it."</p><cite>Luchian Bercea, local</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="grid3">
+        <div><h2 style="font-size:clamp(2.2rem,4vw,3.2rem)">Come by the counter</h2><p style="margin-top:14px;max-width:40ch">Walk up for an espresso, or skip the line with an online order. Pickup is at the front counter.</p></div>
+        <div><h3>2060 6th Avenue</h3><p>Vero Beach, FL 32960<br><a href="tel:+17724928526">(772) 492-8526</a><br><a href="https://maps.app.goo.gl/svnzvHG6qHfwWWLG7" target="_blank" rel="noopener">Get directions</a><br><a href="https://www.instagram.com/mbakeri670/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/mbakerillc" target="_blank" rel="noopener">Facebook</a></p></div>
+        <div><h3>Hours</h3><dl class="hours"><dt>Wed to Sat</dt><dd>7:30 AM to 3:00 PM</dd><dt>Sunday</dt><dd>8:00 AM to 2:00 PM</dd><dt>Mon, Tue</dt><dd>Closed</dd></dl></div>
+      </div>
+      <div class="foot"><span>© 2026 M Bakeri LLC. Demo concept: look numbers, approval marks and bakery prices are placeholders for Chris to confirm; drink prices are from mbakerillc.com.</span><span>A product of <a href="https://litamerica.net" target="_blank" rel="noopener">LIT America</a></span></div>
+    </div>
+  </section>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
+  <div class="dh"><h2 id="drawerTitle">Your bag</h2><button class="x" id="closeBag" aria-label="Close bag">×</button></div>
+  <div class="db" id="bagBody"></div><div class="df" id="bagFoot"></div>
+</aside>
+<div class="sheet" id="sheet" role="dialog" aria-label="Customize your drink"><div class="bg" id="sheetBg"></div><div class="card" id="sheetCard"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="alert" id="alert" role="status" aria-live="polite"></div>
+
+<div class="ask" id="ask">
+  <div class="teaser" id="teaser"><button class="tx" id="teaserX" aria-label="Dismiss">×</button><span id="teaserText"></span></div>
+  <button class="askbtn" id="askBtn"><span class="av">M</span><span class="lbl">Ask Mila</span></button>
+</div>
+<div class="chat" id="chat" role="dialog" aria-label="Chat with Mila">
+  <div class="ch"><span class="av">M</span><div><b>Mila at M Bakeri</b><small>Orders, pairings and the team</small></div><button class="x" id="closeChat" aria-label="Close chat">×</button></div>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <form class="cf" id="chatForm"><input id="chatIn" placeholder="Ask about the collection, cakes, hours…" autocomplete="off" aria-label="Message"><button type="submit">Send</button></form>
+</div>
+<script>
+const MUSIC_SRC = ""; // paste the bakery's own track URL (.mp3) here to replace the built-in café waltz
+const U="https://mbakerillc.com/wp-content/uploads/",T=U+"elementor/thumbs/";
+const IMG={cakes:U+"2023/08/cakes-1a.jpg",cookies:T+"pistachio-cookies-qywo0pi8a1gwsz9bvivv1rqcwwou33pdyqzvkzyyfs.jpg",quiche:U+"2023/07/salmon-quiche-slice.jpg",sweets:T+"swwets-1a-qywo0rdwwharrstcgbvclz0yb59w8ujztd7vrtzm3k.jpg",wrap:T+"mb-wrap-1a-r76f5pcx1u66mvle1y5hb8pu6nsevgwvab00b0ltb4.webp",smoothie:U+"2025/06/smoothie-green-goddess-1a.webp",capp:U+"2022/08/capuccino.jpg",
+ drip:U+"2024/08/drip.png",redeye:U+"2024/08/redeye.jpg",latte:U+"2024/08/latte.jpg",cappu:U+"2024/08/cappu.jpg",flatwhite:U+"2024/08/flatwhite.jpg",icedcream:U+"2024/08/iced-cream.jpg",macchiato:U+"2024/08/macchiato.jpg",icedred:U+"2024/08/iced-red.jpg",hotchoc:U+"2024/08/hotchoc.jpg",icetea:U+"2024/08/ice-tea.jpg",milk:U+"2024/08/old-milk.jpg",sparkling:U+"2024/08/sparkling.jpg",water:U+"2024/08/bottle-water.jpg"};
+const localOf=u=>"images/"+u.split("/").pop();
+const ph=(src,alt,cls="")=>`<div class="ph ${cls}" data-alt="${alt}"><img src="${localOf(src)}" data-remote="${src}" alt="${alt}" loading="lazy" onerror="mbImg(this)"></div>`;
+const CATS=[
+ {id:"tarts",name:"Pastries and tarts",note:"Croissants, custard buns and French tarts, baked at dawn."},
+ {id:"cakes",name:"Artisanal cakes",note:"Whole cakes, cut to order. Two days' notice."},
+ {id:"quiche",name:"Savory quiches",note:"By the slice, served with greens."},
+ {id:"cookies",name:"Cookies and bars",note:"Oven-fresh every morning."},
+ {id:"wraps",name:"Sandwiches and wraps",note:"Italian and Mediterranean, through lunch."},
+ {id:"bread",name:"Sweet breads",note:"By the slice, or ask for a whole loaf."},
+ {id:"hot",name:"Hot coffee",note:"Single-origin espresso, pulled when you arrive.",drink:1},
+ {id:"cold",name:"Cold coffee",note:"Made for Vero afternoons.",drink:1},
+ {id:"sips",name:"Smoothies and other sips",note:"Fresh, cold and caffeine-free.",drink:1}
+];
+const ITEMS=[
+ // pastry
+ {id:"smores",cat:"tarts",n:"S'mores croissant",d:"Chocolate, toasted marshmallow and graham in a laminated croissant.",p:5.75,t:["best"],stock:7,a:["smores","s'mores","smore","croissant"]},
+ {id:"custard",cat:"tarts",n:"Brioche custard bun",d:"Soft brioche filled with vanilla custard.",p:4.95,t:["best"],stock:9,a:["custard","brioche","bun"]},
+ // cakes (pre-order via builder)
+ {id:"triple",cat:"cakes",n:"Triple chocolate",d:"Bittersweet, velvety and creamy chocolate in three layers.",p:58,t:["best","pre"],a:["triple chocolate","chocolate cake"]},
+ {id:"earlgrey",cat:"cakes",n:"Earl Grey tea cake",d:"Earl Grey sponge with Parisian buttercream.",p:58,t:["pre"],a:["earl grey","tea cake","parisian"]},
+ {id:"bananut",cat:"cakes",n:"Banana cake with Nutella buttercream",d:"Moist banana cake, hazelnut-chocolate buttercream.",p:56,t:["pre"],a:["banana cake","nutella"]},
+ {id:"nextcarrot",cat:"cakes",n:"Next level carrot cake",d:"Layers of carrot cake and rich cream cheese frosting.",p:56,t:["pre"],a:["carrot cake","next level"]},
+ {id:"birthday",cat:"cakes",n:"Birthday cake",d:"Creamy frosting and sprinkle confetti.",p:52,t:["pre"],a:["birthday cake","funfetti cake"]},
+ {id:"blueberry",cat:"cakes",n:"New York blueberry crumb cake",d:"Juicy blueberries under buttery crumble.",p:48,t:["pre"],a:["blueberry","crumb cake","new york"]},
+ {id:"vegancarrot",cat:"cakes",n:"Vegan carrot sheet cake",d:"With vegan cream cheese frosting.",p:50,t:["pre","pb"],a:["vegan carrot"]},
+ {id:"veganvanilla",cat:"cakes",n:"Vegan vanilla cake",d:"Fluffy, fully plant-based.",p:50,t:["pre","pb"],a:["vegan vanilla","vanilla cake"]},
+ // cookies
+ {id:"rosemary",cat:"cookies",n:"Rosemary chocolate chip cookie",d:"Fragrant rosemary with classic chocolate chips.",p:3.95,t:[],stock:14,a:["rosemary"]},
+ {id:"espcookie",cat:"cookies",n:"Double chocolate espresso cookie",d:"Double chocolate with a shot of espresso.",p:3.95,t:["best"],stock:6,a:["espresso cookie","double chocolate"]},
+ {id:"brownie",cat:"cookies",n:"Cardamom and pecan fudge brownie",d:"Warm cardamom, crunchy pecans, fudgy center.",p:4.75,t:[],stock:8,a:["brownie","cardamom"]},
+ {id:"lemonbar",cat:"cookies",n:"Lemon thyme bar",d:"Bright lemon with a whisper of thyme.",p:4.50,t:[],stock:10,a:["lemon thyme","lemon bar"]},
+ {id:"butterscotch",cat:"cookies",n:"Oatmeal butterscotch walnut cookie",d:"Oats, butterscotch and walnuts.",p:3.95,t:[],stock:12,a:["butterscotch","walnut cookie"]},
+ {id:"funfetti",cat:"cookies",n:"Funfetti cookie",d:"A confetti party in every bite.",p:3.75,t:[],stock:15,a:["funfetti"]},
+ {id:"pistcherry",cat:"cookies",n:"Pistachio tart cherry balls",d:"Nutty pistachio, tangy tart cherry, bite-size.",p:3.50,t:[],stock:12,a:["pistachio","cherry"]},
+ {id:"veganchip",cat:"cookies",n:"Vegan chocolate chip cookie",d:"The classic, plant-based.",p:3.75,t:["pb"],stock:9,a:["vegan chocolate chip","vegan cookie"]},
+ {id:"veganoat",cat:"cookies",n:"Vegan oatmeal raisin cookie",d:"Chewy oats and plump raisins.",p:3.75,t:["pb"],stock:9,a:["oatmeal raisin","raisin"]},
+ // quiche
+ {id:"salmon",cat:"quiche",n:"Smoked salmon and dill quiche",d:"Smoky salmon and dill in a buttery crust.",p:10.50,t:["best"],a:["salmon","dill"]},
+ {id:"lorraine",cat:"quiche",n:"Quiche Lorraine",d:"Eggs, cream and bacon, the Paris classic.",p:9.50,t:[],a:["lorraine","bacon quiche"]},
+ {id:"medquiche",cat:"quiche",n:"Mediterranean quiche",d:"Tomatoes, olives and creamy feta.",p:9.50,t:["v"],a:["mediterranean quiche","feta"]},
+ {id:"sausage",cat:"quiche",n:"Sausage and leek quiche",d:"Savory sausage and tender leeks.",p:9.50,t:[],a:["sausage","leek"]},
+ // bread
+ {id:"pumpkin",cat:"bread",n:"Pumpkin chocolate bread",d:"Pumpkin and chocolate, made without gluten.",p:4.75,t:["gf"],stock:8,a:["pumpkin"]},
+ {id:"meyer",cat:"bread",n:"Meyer lemon loaf",d:"Tender, tangy, sunshine in a slice.",p:4.25,t:[],stock:10,a:["meyer","lemon loaf"]},
+ {id:"banwal",cat:"bread",n:"Banana walnut bread",d:"Comfort, one crumb at a time.",p:4.25,t:[],stock:10,a:["banana walnut","banana bread"]},
+ // tarts
+ {id:"berrytart",cat:"tarts",n:"Braided triple berry cream cheese tart",d:"Berries and cream cheese in a flaky braid.",p:6.75,t:[],stock:6,a:["berry tart","triple berry","braided"]},
+ {id:"rasptart",cat:"tarts",n:"Raspberry tart with strudel crumble",d:"Tangy raspberries under golden crumble.",p:6.50,t:[],stock:6,a:["raspberry"]},
+ // wraps
+ {id:"italwrap",cat:"wraps",n:"Italian wrap",d:"Artisan meats, creamy cheese, herbs and olive oil.",p:13.50,t:["new"],a:["italian wrap","italian"]},
+ {id:"medwrap",cat:"wraps",n:"Mediterranean wrap",d:"Marinated vegetables, herbs and a hint of citrus.",p:13.50,t:["new","v"],a:["mediterranean wrap","wrap"]},
+ {id:"chicken",cat:"wraps",n:"Lemon basil chicken salad",d:"Herb chicken with lemon and basil.",p:12.50,t:[],a:["chicken"]},
+ {id:"blt",cat:"wraps",n:"BLT with lemon thyme aioli",d:"Crispy bacon, lettuce, tomato, zesty aioli.",p:12.00,t:[],a:["blt"]},
+ // hot (real prices)
+ {id:"cortado",cat:"hot",n:"Cortado",d:"Espresso cut with equal steamed milk.",p:5.00,t:["best"],milk:1,a:["cortado"]},
+ {id:"latte",cat:"hot",n:"Latte",d:"Espresso and silky steamed milk.",p:7.00,t:[],milk:1,a:["latte"]},
+ {id:"capp",cat:"hot",n:"Cappuccino",d:"Velvety microfoam over espresso.",p:6.00,t:[],milk:1,a:["cappuccino","capuccino"]},
+ {id:"flatwhite",cat:"hot",n:"Flat white",d:"Ristretto shots with thin, glossy milk.",p:7.00,t:[],milk:1,a:["flat white"]},
+ {id:"macchiato",cat:"hot",n:"Macchiato",d:"Espresso marked with foam.",p:4.50,t:[],milk:1,a:["macchiato"]},
+ {id:"espresso",cat:"hot",n:"Espresso",d:"Single-origin, pulled to order.",p:4.00,t:[],a:["espresso"]},
+ {id:"americano",cat:"hot",n:"Americano",d:"Espresso and hot water.",p:5.50,t:[],a:["americano"]},
+ {id:"redeye",cat:"hot",n:"Redeye",d:"Drip coffee with a shot of espresso.",p:7.00,t:[],a:["redeye","red eye"]},
+ {id:"drip",cat:"hot",n:"Drip",d:"Today's single-origin brew.",p:5.00,t:[],a:["drip","coffee"]},
+ // cold
+ {id:"coldbrew",cat:"cold",n:"Cold brew",d:"Steeped slow, served over ice.",p:6.00,t:[],a:["cold brew"]},
+ {id:"icedlatte",cat:"cold",n:"Iced latte",d:"Espresso and cold milk over ice.",p:7.50,t:["best"],milk:1,a:["iced latte"]},
+ {id:"icedcapp",cat:"cold",n:"Iced cappuccino",d:"Cold foam over espresso.",p:7.50,t:[],milk:1,a:["iced cappuccino"]},
+ {id:"icedred",cat:"cold",n:"Iced redeye",d:"Cold coffee with an espresso shot.",p:7.50,t:[],a:["iced redeye"]},
+ {id:"icedamer",cat:"cold",n:"Iced Americano",d:"Espresso and cold water over ice.",p:6.00,t:[],a:["iced americano"]},
+ {id:"icedesp",cat:"cold",n:"Iced espresso",d:"Espresso, shaken cold.",p:4.00,t:[],a:["iced espresso"]},
+ // sips
+ {id:"goddess",cat:"sips",n:"Tropical Green Goddess smoothie",d:"Mango, pineapple, banana and spinach with a splash of citrus.",p:9.50,t:["new","pb","gf"],a:["green goddess","goddess","smoothie"]},
+ {id:"hotchoc",cat:"sips",n:"Hot chocolate",d:"Rich and real.",p:5.00,t:[],milk:1,a:["hot chocolate","cocoa"]},
+ {id:"icetea",cat:"sips",n:"Iced tea",d:"Fresh-brewed, over ice.",p:6.00,t:[],a:["iced tea","ice tea","tea"]},
+ {id:"milk",cat:"sips",n:"Cold milk",d:"A cold glass.",p:4.00,t:[],a:["milk"]},
+ {id:"sparkling",cat:"sips",n:"Sparkling water",d:"",p:1.50,t:[],a:["sparkling"]},
+ {id:"water",cat:"sips",n:"Bottle of water",d:"",p:2.00,t:[],a:["water"]}
+];
+const catById=Object.fromEntries(CATS.map(c=>[c.id,c]));
+// Photos: each used once on the page. Runway looks get the category shots; drink rows get their own.
+const THUMB={drip:IMG.drip,redeye:IMG.redeye,latte:IMG.latte,capp:IMG.cappu,flatwhite:IMG.flatwhite,macchiato:IMG.macchiato,icedred:IMG.icedred,icedesp:IMG.icedcream,hotchoc:IMG.hotchoc,icetea:IMG.icetea,milk:IMG.milk,sparkling:IMG.sparkling,water:IMG.water};
+const LOOKS=[
+ {id:"earlgrey",img:IMG.cakes,line:"Earl Grey sponge, Parisian buttercream. The collection's most European piece."},
+ {id:"salmon",img:IMG.quiche,line:"Smoked salmon and dill in a buttery crust."},
+ {id:"berrytart",img:IMG.sweets,line:"Berries and cream cheese, braided in flaky pastry."},
+ {id:"italwrap",img:IMG.wrap,line:"New this season. Artisan meats, creamy cheese, olive oil."},
+ {id:"pistcherry",img:IMG.cookies,line:"Pistachio and tart cherry, rolled bite-size."},
+ {id:"goddess",img:IMG.smoothie,line:"Mango, pineapple, banana, spinach. Vero in a glass."},
+ {id:"capp",img:IMG.capp,line:"Single-origin espresso under velvet microfoam."}
+];
+ITEMS.forEach(i=>{i.thumb=THUMB[i.id]||null;i.k=[i.n.toLowerCase(),...i.a]});
+const byId=Object.fromEntries(ITEMS.map(i=>[i.id,i]));
+LOOKS.forEach((l,x)=>{byId[l.id].look=x+1;byId[l.id].lookImg=l.img});
+ITEMS.forEach(i=>{i.img=i.lookImg||i.thumb||null});
+const FLAVORS=[{v:"None",p:0},{v:"Vanilla",p:.75},{v:"Caramel",p:.75},{v:"Lavender",p:.75},{v:"Chocolate",p:.75},{v:"Honey-oat",p:.75}];
+const MILKS=[{v:"Whole milk",p:0},{v:"Almond milk",p:.75},{v:"Pistachio milk",p:1.50}];
+const TAGS={gf:"Gluten-free",pb:"Plant-based",v:"Vegetarian"};
+const PAIR={smores:"cortado",custard:"cortado",rosemary:"latte",espcookie:"coldbrew",brownie:"flatwhite",lemonbar:"icetea",butterscotch:"capp",funfetti:"hotchoc",pistcherry:"latte",veganchip:"icedlatte",veganoat:"capp",salmon:"goddess",lorraine:"capp",medquiche:"icetea",sausage:"americano",pumpkin:"latte",meyer:"icetea",banwal:"drip",berrytart:"capp",rasptart:"latte",italwrap:"icetea",medwrap:"goddess",chicken:"icetea",blt:"icedamer",cortado:"custard",latte:"meyer",capp:"smores",flatwhite:"brownie",macchiato:"rasptart",espresso:"espcookie",americano:"banwal",redeye:"smores",drip:"banwal",coldbrew:"espcookie",icedlatte:"lemonbar",icedcapp:"berrytart",icedred:"brownie",icedamer:"pumpkin",icedesp:"brownie",goddess:"medwrap",hotchoc:"funfetti",icetea:"lemonbar",milk:"espcookie"};
+const HOURS={0:[480,840],3:[450,900],4:[450,900],5:[450,900],6:[450,900]};
+const TAX=.07,money=n=>"$"+n.toFixed(2);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const needsSheet=i=>catById[i.cat].drink&&(i.milk||i.cat!=="sips");
+let bag=[];try{bag=JSON.parse(localStorage.getItem("mbakeri-bag3")||"[]")||[]}catch(e){bag=[]}
+const save=()=>{try{localStorage.setItem("mbakeri-bag3",JSON.stringify(bag))}catch(e){}};
+let activeCat="all",diet=null,view="bag",payMode="now";
+const Music=(()=>{
+  let ctx,master,timer,on=false,step=0,nextT=0,audioEl;
+  const BPM=96,beat=60/BPM;
+  // A café waltz in A minor: Am Dm G C F Dm E7 Am
+  const CH=[[57,60,64],[50,53,57],[55,59,62],[48,52,55],[53,57,60],[50,53,57],[52,56,59],[57,60,64]];
+  const MEL=[[76,74,72],[77,76,74],[74,71,67],[72,71,72],[69,72,77],[77,74,72],[71,68,71],[69,72,76],
+             [76,77,76],[74,72,74],[71,74,79],[76,72,67],[72,69,65],[74,77,74],[68,71,74],[69,64,69]];
+  const f=m=>440*Math.pow(2,(m-69)/12);
+  function voice(m,t,dur,vol,type){
+    const o=ctx.createOscillator(),o2=ctx.createOscillator(),g=ctx.createGain();
+    o.type=type||"triangle";o2.type="sine";o.frequency.value=f(m);o2.frequency.value=f(m)*2.003;
+    const g2=ctx.createGain();g2.gain.value=.18;
+    o.connect(g);o2.connect(g2);g2.connect(g);g.connect(master);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.012);g.gain.exponentialRampToValueAtTime(.0008,t+dur);
+    o.start(t);o2.start(t);o.stop(t+dur+.05);o2.stop(t+dur+.05);
+  }
+  function schedule(){
+    while(nextT<ctx.currentTime+.25){
+      const bar=Math.floor(step/3)%16,b=step%3,ch=CH[bar%8];
+      if(b===0)voice(ch[0]-12,nextT,beat*2.6,.22,"sine");
+      else ch.forEach(n=>voice(n,nextT,beat*.9,.055));
+      const mn=MEL[bar][b];voice(mn,nextT,beat*1.6,.09);
+      if(b===2&&bar%2===1)voice(mn+12,nextT+beat*.5,beat*.8,.035);
+      nextT+=beat;step++;
+    }
+  }
+  function start(){
+    if(MUSIC_SRC){if(!audioEl){audioEl=new Audio(MUSIC_SRC);audioEl.loop=true;audioEl.volume=.5}audioEl.play().catch(()=>{});on=true;return}
+    if(!ctx){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;ctx=new AC();
+      master=ctx.createGain();master.gain.value=0;
+      const lp=ctx.createBiquadFilter();lp.type="lowpass";lp.frequency.value=2600;
+      const dl=ctx.createDelay();dl.delayTime.value=.23;const fb=ctx.createGain();fb.gain.value=.28;const wet=ctx.createGain();wet.gain.value=.22;
+      master.connect(lp);lp.connect(ctx.destination);lp.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(ctx.destination);}
+    ctx.resume();master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setValueAtTime(master.gain.value,ctx.currentTime);master.gain.linearRampToValueAtTime(.55,ctx.currentTime+1.8);
+    nextT=ctx.currentTime+.1;clearInterval(timer);timer=setInterval(schedule,60);on=true;
+  }
+  function stop(){
+    if(audioEl){audioEl.pause()}
+    if(ctx){master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setValueAtTime(master.gain.value,ctx.currentTime);master.gain.linearRampToValueAtTime(0,ctx.currentTime+.6);setTimeout(()=>clearInterval(timer),650)}
+    on=false;
+  }
+  return{start,stop,get on(){return on}};
+})();
+function setSound(v){
+  v?Music.start():Music.stop();
+  const b=document.getElementById("soundBtn");b.setAttribute("aria-pressed",v);document.getElementById("soundLbl").textContent=v?"Music on":"Music off";
+  try{sessionStorage.setItem("mb-sound",v?"1":"0")}catch(e){}
+}
+function enter(withMusic){
+  const c=document.getElementById("curtain");c.classList.add("open");document.body.classList.remove("locked");
+  if(withMusic){setSound(true);setAuto(true)}
+  try{sessionStorage.setItem("mb-entered","1")}catch(e){}
+  setTimeout(()=>c.classList.add("gone"),1400);setTimeout(showTeaser,7000);
+}
+/* Hours */
+function fmtTime(m){let h=Math.floor(m/60),mm=m%60,ap=h>=12?"PM":"AM";h=h%12||12;return h+":"+String(mm).padStart(2,"0")+" "+ap}
+const dayName=(d,long)=>d.toLocaleDateString("en-US",long?{weekday:"long",month:"short",day:"numeric"}:{weekday:"short",month:"short",day:"numeric"});
+function nextOpen(){const now=new Date(),mins=now.getHours()*60+now.getMinutes(),h=HOURS[now.getDay()];
+  if(h&&mins>=h[0]&&mins<h[1])return{open:true,close:h[1]};
+  for(let i=0;i<9;i++){const d=new Date(now);d.setDate(d.getDate()+i);const hh=HOURS[d.getDay()];if(!hh||(i===0&&mins>=hh[0]))continue;return{open:false,date:d,at:hh[0],today:i===0}}}
+function slots(lead){const out=[],now=new Date(),earliest=new Date(now.getTime()+lead*60000);let days=0;
+  for(let i=0;i<14&&days<3;i++){const d=new Date(now);d.setDate(d.getDate()+i);d.setHours(0,0,0,0);const h=HOURS[d.getDay()];if(!h)continue;let any=false;
+    for(let m=h[0]+15;m<=h[1]-15;m+=15){const t=new Date(d.getTime()+m*60000);if(t<earliest)continue;any=true;out.push(`${i===0?"Today":dayName(d)} at ${fmtTime(m)}`)}if(any)days++}
+  return out}
+function renderStatus(){const s=nextOpen(),el=document.getElementById("status"),tx=document.getElementById("statusText");
+  if(s.open){el.classList.remove("closed");tx.textContent=`Open now until ${fmtTime(s.close)}. Pickup in about 20 minutes.`}
+  else{el.classList.add("closed");tx.textContent=s.today?`Opens today at ${fmtTime(s.at)}. Order now and be first in line.`:`Closed today. Order now for ${dayName(s.date,true)} pickup.`}}
+
+/* Ticker */
+function renderTicker(){const one=`<span>New this season: Italian and Mediterranean wraps</span><span class="sun">☼</span><span>Tropical Green Goddess smoothie</span><span class="sun">☼</span><span>Couture cakes with two days' notice</span><span class="sun">☼</span>`;document.getElementById("ticker").innerHTML=one.repeat(4)}
+
+/* Runway */
+const pad2=n=>String(n).padStart(2,"0");
+function renderRunway(){
+  document.getElementById("runway").innerHTML=LOOKS.map((l,x)=>{const i=byId[l.id];
+    const btn=i.cat==="cakes"?`<button class="add-l" data-cake="${i.id}">Order this cake</button>`:`<button class="add-l" data-add="${i.id}">Add, ${money(i.p)}</button>`;
+    return`<article class="look" data-i="${x}">${ph(l.img,i.n)}<div class="num"><b>Look ${pad2(x+1)}</b><span>${catById[i.cat].name}</span></div><h3>${i.n}</h3><p>${l.line}</p><div class="foot"><div class="approved"><span class="sig">Chris Foster</span><small>Approved for the collection</small></div>${btn}</div></article>`}).join("");
+}
+let curLook=0,autoTimer=null;
+const runway=()=>document.getElementById("runway");
+function goLook(i){const r=runway(),looks=r.querySelectorAll(".look");curLook=(i+looks.length)%looks.length;const el=looks[curLook];
+  r.scrollTo({left:el.offsetLeft-(r.clientWidth-el.clientWidth)/2,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}
+function markActive(){const r=runway(),mid=r.scrollLeft+r.clientWidth/2;let best=0,bd=1e9;
+  r.querySelectorAll(".look").forEach((el,x)=>{const c=el.offsetLeft+el.clientWidth/2,d=Math.abs(c-mid);if(d<bd){bd=d;best=x}});
+  curLook=best;r.querySelectorAll(".look").forEach((el,x)=>el.classList.toggle("on",x===best))}
+function setAuto(v){clearInterval(autoTimer);const b=document.getElementById("autoShow");b.setAttribute("aria-pressed",v);b.textContent=v?"Pause the show":"Play the show";
+  if(v&&!matchMedia("(prefers-reduced-motion: reduce)").matches)autoTimer=setInterval(()=>{if(!runway().matches(":hover"))goLook(curLook+1)},4200)}
+
+/* Collection */
+const seal=`<span class="seal" title="Approved by Chris Foster"><i aria-hidden="true">CF</i>Approved by Chris</span>`;
+function stockHTML(i){if(i.stock==null)return"";if(i.stock<=0)return`<span class="left">Sold out today</span>`;if(i.stock<=6)return`<span class="left">${i.stock} left today</span>`;return""}
+function rowHTML(i){
+  const pill=(i.look?`<span class="pill lk">Look ${pad2(i.look)}</span>`:"")+(i.t.includes("best")?`<span class="pill best">Bestseller</span>`:i.t.includes("new")?`<span class="pill new">New</span>`:"");
+  const tags=i.t.filter(x=>TAGS[x]).map(x=>`<span class="tag ${x}">${TAGS[x]}</span>`).join("");
+  const btn=i.cat==="cakes"?`<button class="plus wide" data-cake="${i.id}">Order</button>`:`<button class="plus" data-add="${i.id}" aria-label="Add ${i.n}" ${i.stock===0?"disabled":""}>+</button>`;
+  return`<div class="row ${i.thumb?"":"nt"}">${i.thumb?ph(i.thumb,i.n,"th"):""}<div><h4>${i.n} ${pill}</h4>${i.d?`<p class="ds">${i.d}</p>`:""}<div class="meta">${seal}${tags}${stockHTML(i)}${i.cat==="cakes"?`<span class="tag">Pre-order</span>`:""}</div></div><div class="side"><span class="price">${i.cat==="cakes"?"from "+money(i.p-10):money(i.p)}</span>${btn}</div></div>`}
+function renderTabs(){document.getElementById("tabs").innerHTML=`<button class="tab" data-cat="all" aria-pressed="${activeCat==="all"}">Everything</button>`+CATS.map(c=>`<button class="tab" data-cat="${c.id}" aria-pressed="${activeCat===c.id}">${c.name}</button>`).join("")+`<span class="sep"></span>`+["gf","pb"].map(f=>`<button class="tab filter" data-diet="${f}" aria-pressed="${diet===f}">${TAGS[f]}</button>`).join("")}
+function renderMenu(){let html="";
+  CATS.forEach(c=>{if(activeCat!=="all"&&activeCat!==c.id)return;const list=ITEMS.filter(i=>i.cat===c.id&&(!diet||i.t.includes(diet)));if(diet&&!list.length&&activeCat==="all")return;
+    html+=`<div class="cat" id="cat-${c.id}"><div class="cat-h"><h3>${c.name}</h3><p>${c.note}</p></div><div>${list.length?list.map(rowHTML).join(""):`<p style="color:var(--muted)">Nothing ${TAGS[diet].toLowerCase()} here yet.</p>`}</div></div>`});
+  document.getElementById("menu").innerHTML=html}
+
+/* Bag */
+const keyOf=(id,o)=>id+(o?"|"+o.flavor+"|"+o.milk:"");
+function unitPrice(b){if(b.custom)return b.custom.price;let p=byId[b.id].p;if(b.o)p+=(FLAVORS.find(f=>f.v===b.o.flavor)||{p:0}).p+(MILKS.find(m=>m.v===b.o.milk)||{p:0}).p;return p}
+function addItem(id,q=1,o){const i=byId[id];if(!i)return false;
+  if(i.stock!=null&&q>i.stock){toast(i.stock?`Only ${i.stock} left today`:"Sold out for today");return false}
+  const k=keyOf(id,o),ex=bag.find(b=>b.k===k);if(ex)ex.q+=q;else bag.push({k,id,q,o});if(i.stock!=null)i.stock-=q;
+  changed();toast(`${q>1?q+" × ":""}${i.n} added`);return true}
+function changeQty(idx,d){const b=bag[idx];if(!b)return;const i=byId[b.id];if(d>0&&i&&i.stock!=null&&i.stock<=0){toast("That was the last one today");return}
+  b.q+=d;if(i&&i.stock!=null)i.stock-=d;if(b.q<=0)bag.splice(idx,1);changed()}
+const count=()=>bag.reduce((a,b)=>a+b.q,0),subtotal=()=>bag.reduce((a,b)=>a+unitPrice(b)*b.q,0),hasPre=()=>bag.some(b=>b.custom);
+function changed(){save();document.getElementById("bagCount").textContent=count();const bb=document.getElementById("bagBtn");bb.classList.remove("bump");void bb.offsetWidth;bb.classList.add("bump");renderMenu();if(document.getElementById("drawer").classList.contains("on"))renderBag()}
+function suggestion(){for(const b of bag){const p=byId[PAIR[b.id]];if(p&&!bag.some(x=>x.id===p.id)&&(p.stock==null||p.stock>0))return p}return null}
+function renderBag(){if(view==="done")return;const body=document.getElementById("bagBody"),foot=document.getElementById("bagFoot");document.getElementById("drawerTitle").textContent="Your bag";
+  if(!bag.length){body.innerHTML=`<div class="empty"><b>Your bag is empty</b>Start with Look 01, or the croissant regulars rave about.<br><br><button class="btn ink" data-add="smores">Add a s'mores croissant</button></div>`;foot.innerHTML="";return}
+  const sug=suggestion();
+  body.innerHTML=bag.map((b,idx)=>{const i=b.custom?null:byId[b.id],name=b.custom?`${b.custom.flavor} cake`:i.n;
+    const sub=b.custom?`${b.custom.size}, ${b.custom.finish.toLowerCase()}${b.custom.msg?`, "${esc(b.custom.msg)}"`:""}. Pickup ${b.custom.date}. 50% deposit today.`:(b.o?[b.o.milk!=="Whole milk"?b.o.milk:"",b.o.flavor!=="None"?b.o.flavor:""].filter(Boolean).join(", "):"");
+    return`<div class="bline"><div><b>${name}</b>${sub?`<small>${sub}</small>`:""}<div class="qty">${b.custom?`<button data-q="${idx}" data-d="-1" aria-label="Remove">×</button>`:`<button data-q="${idx}" data-d="-1" aria-label="One less">−</button><span>${b.q}</span><button data-q="${idx}" data-d="1" aria-label="One more">+</button>`}</div></div><span>${money(unitPrice(b)*b.q)}</span></div>`}).join("")+
+    (sug?`<div class="pair"><div><small>Chris pairs it with</small>${sug.n}, ${money(sug.p)}</div><button class="mini" data-add="${sug.id}">Add</button></div>`:"");
+  const st=subtotal(),tax=st*TAX,sl=slots(hasPre()?2880:20),dep=bag.filter(b=>b.custom).reduce((a,b)=>a+b.custom.price*.5,0);
+  foot.innerHTML=`<div class="sum"><span>Subtotal</span><span>${money(st)}</span></div><div class="sum"><span>Sales tax</span><span>${money(tax)}</span></div><div class="sum t"><span>Total</span><span>${money(st+tax)}</span></div>
+   <label class="f" for="slot" style="margin:4px 0 0">Pickup time${hasPre()?' <span style="color:var(--muted);font-weight:400">(cakes need two days)</span>':""}</label>
+   <select class="inp" id="slot">${sl.map(s=>`<option>${s}</option>`).join("")}</select>
+   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><input class="inp" id="oName" placeholder="Name" autocomplete="name" aria-label="Name"><input class="inp" id="oPhone" type="tel" placeholder="Mobile number" autocomplete="tel" aria-label="Mobile number"></div>
+   <div class="seg" role="radiogroup" aria-label="Payment"><label><input type="radio" name="pay" value="now" ${payMode==="now"?"checked":""}><span>Pay now</span></label><label><input type="radio" name="pay" value="later" ${payMode==="later"?"checked":""}><span>Pay at pickup</span></label></div>
+   <div class="err" id="oErr" role="alert"></div>
+   <button class="btn ink" id="placeOrder">${payMode==="now"?`Pay ${money(st+tax)} and place order`:dep?`Pay ${money(dep)} deposit and place order`:"Place order"}</button>`}
+function placeOrder(){const name=document.getElementById("oName").value.trim(),phone=document.getElementById("oPhone").value.trim(),err=document.getElementById("oErr");
+  if(!name){err.textContent="Add a name so we know whose box it is.";return}
+  if(phone.replace(/\D/g,"").length<10){err.textContent="Add a 10-digit mobile number for the ready text.";return}
+  const slot=document.getElementById("slot").value,num="MB-"+(1000+Math.floor(Math.random()*9000)),total=subtotal()*(1+TAX),n=count();
+  const summary=bag.map(b=>`${b.q}× ${b.custom?b.custom.flavor+" cake":byId[b.id].n}`).join(", ");
+  view="done";document.getElementById("drawerTitle").textContent="Order placed";
+  document.getElementById("bagBody").innerHTML=`<div class="empty" style="padding-top:40px"><b>Merci, ${esc(name.split(" ")[0])}.</b>Order ${num} is with the kitchen.<br>Pickup <strong style="color:var(--ink)">${slot}</strong> at the front counter.<br><br>We'll text ${esc(phone)} when it's boxed.<br><br><span style="font-size:.9rem">${n} item${n>1?"s":""}, ${money(total)} ${payMode==="now"?"paid":"due at pickup"}</span></div>`;
+  document.getElementById("bagFoot").innerHTML=`<button class="btn line" id="newOrder">Start another order</button>`;
+  bag=[];save();document.getElementById("bagCount").textContent="0";
+  setTimeout(()=>phoneAlert(`New order ${num}`,`${esc(name)}, pickup ${slot}. ${esc(summary)}. ${money(total)} ${payMode==="now"?"paid":"due at pickup"}.`),900)}
+function openBag(){view="bag";renderBag();const d=document.getElementById("drawer");d.classList.add("on");d.setAttribute("aria-hidden","false");document.getElementById("scrim").classList.add("on");setTimeout(()=>document.getElementById("closeBag").focus(),60)}
+function closeBag(){const d=document.getElementById("drawer");d.classList.remove("on");d.setAttribute("aria-hidden","true");document.getElementById("scrim").classList.remove("on")}
+
+/* What the bakery's phone receives (demo) */
+let alertT;function phoneAlert(title,body){const a=document.getElementById("alert");
+  a.innerHTML=`<div class="ah"><i>M</i>M Bakeri Orders<span style="margin-left:auto">now</span></div><b>${title}</b>${body}<small>Demo: this is the text the bakery team would receive.</small>`;
+  a.classList.add("on");clearTimeout(alertT);alertT=setTimeout(()=>a.classList.remove("on"),9000)}
+
+/* Drink sheet */
+let sheetItem=null;
+function openSheet(id){const i=byId[id];sheetItem=i;
+  const r=(n,arr)=>arr.map((o,x)=>`<label class="opt"><input type="radio" name="${n}" value="${x}" ${x===0?"checked":""}><span>${o.v}${o.p?`<small>+${money(o.p)}</small>`:""}</span></label>`).join("");
+  document.getElementById("sheetCard").innerHTML=`<h3>${i.n}</h3><p style="color:var(--muted);margin:0 0 6px">${i.d}</p><div style="margin:0 0 18px">${seal}</div>
+    ${i.milk?`<fieldset style="margin-bottom:18px"><legend>Milk</legend><div class="opts">${r("smk",MILKS)}</div></fieldset>`:""}
+    <fieldset style="margin-bottom:20px"><legend>Flavor</legend><div class="opts">${r("sfl",FLAVORS)}</div></fieldset>
+    <div style="display:flex;gap:10px"><button class="btn ink" id="sheetAdd" style="flex:1">Add for ${money(i.p)}</button><button class="btn line" id="sheetCancel">Cancel</button></div>`;
+  document.getElementById("sheet").classList.add("on");setTimeout(()=>document.getElementById("sheetAdd").focus(),50)}
+function sheetOpts(){const c=document.getElementById("sheetCard"),f=FLAVORS[+c.querySelector('[name=sfl]:checked').value],m=sheetItem.milk?MILKS[+c.querySelector('[name=smk]:checked').value]:MILKS[0];return{flavor:f.v,milk:m.v,extra:f.p+(sheetItem.milk?m.p:0)}}
+const closeSheet=()=>document.getElementById("sheet").classList.remove("on");
+
+/* Couture cakes */
+const CAKEFL=[["earlgrey","Earl Grey with Parisian buttercream",6],["triple","Triple chocolate",6],["bananut","Banana with Nutella buttercream",4],["nextcarrot","Next level carrot",4],["birthday","Birthday confetti",0],["blueberry","New York blueberry crumb",0],["vegancarrot","Vegan carrot",2],["veganvanilla","Vegan vanilla",2]];
+const SIZES=[["6 inch","serves 6 to 8",42],["8 inch","serves 10 to 14",52],["10 inch","serves 18 to 24",74],["Half sheet","serves 30 to 40",96]];
+const FINISH=[["Parisian buttercream",0],["Naked, semi-bare",0],["Fresh flowers",14],["Gold leaf",18]];
+function buildCake(){const r=(g,arr,f)=>arr.map((o,x)=>`<label class="opt"><input type="radio" name="${g}" value="${x}" ${x===0?"checked":""}><span>${f(o)}</span></label>`).join("");
+  document.getElementById("cakeFlavor").innerHTML=r("fl",CAKEFL,o=>`${o[1]}${o[2]?`<small>+${money(o[2])}</small>`:""}`);
+  document.getElementById("cakeSize").innerHTML=r("sz",SIZES,o=>`${o[0]}<small>${o[1]}, ${money(o[2])}</small>`);
+  document.getElementById("cakeFinish").innerHTML=r("fi",FINISH,o=>`${o[0]}${o[1]?`<small>+${money(o[1])}</small>`:""}`);
+  const now=new Date();let html="",n=0;for(let i=2;i<40&&n<14;i++){const d=new Date(now);d.setDate(d.getDate()+i);if(!HOURS[d.getDay()])continue;html+=`<option>${dayName(d,true)}</option>`;n++}
+  document.getElementById("cakeDate").innerHTML=html;updateCake()}
+function cakeVals(){const f=document.getElementById("cakeForm"),fl=CAKEFL[f.fl.value],sz=SIZES[f.sz.value],fi=FINISH[f.fi.value];return{flavor:fl[1],size:sz[0],finish:fi[0],price:sz[2]+fl[2]+fi[1],msg:document.getElementById("cakeMsg").value.trim(),date:document.getElementById("cakeDate").value}}
+function updateCake(){const c=cakeVals();document.getElementById("cakeTotal").textContent=money(c.price);document.getElementById("cakeDep").textContent=`${money(c.price/2)} deposit today, the rest at pickup`}
+function pickCake(id){const x=CAKEFL.findIndex(c=>c[0]===id);if(x>=0){document.querySelectorAll('#cakeForm [name=fl]')[x].checked=true;updateCake()}document.getElementById("cakes").scrollIntoView()}
+let tt;function toast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),1900)}
+/* Mila: concierge with a handoff to the team */
+const msgs=document.getElementById("msgs");let lastSug=null,greeted=false,misses=0,handoff=null;
+function bot(html,chips){const ty=document.createElement("div");ty.className="m bot typing";ty.innerHTML="<i></i><i></i><i></i>";msgs.appendChild(ty);msgs.scrollTop=msgs.scrollHeight;
+  setTimeout(()=>{ty.remove();const m=document.createElement("div");m.className="m bot";m.innerHTML=html;msgs.appendChild(m);
+    if(chips&&chips.length){const c=document.createElement("div");c.className="chips";c.innerHTML=chips.map(ch=>`<button class="chip ${ch.a==="team"?"team":""}" data-chip="${esc(ch.a)}">${esc(ch.l)}</button>`).join("");msgs.appendChild(c)}
+    msgs.scrollTop=msgs.scrollHeight},420+Math.min(html.length*3,600))}
+function me(t){const m=document.createElement("div");m.className="m me";m.textContent=t;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight}
+const li=i=>`<li>${i.n}${i.look?` (Look ${pad2(i.look)})`:""}, ${money(i.p)}${i.stock!=null&&i.stock<=6?`, ${i.stock} left`:""}</li>`;
+const addChips=l=>l.slice(0,3).map(i=>({l:"Add "+i.n.toLowerCase(),a:"add:"+i.id}));
+const TEAM={l:"Message the team",a:"team"};
+const BASE=[{l:"The runway looks",a:"looks"},{l:"Coffee",a:"coffee"},{l:"Couture cake",a:"cake"},TEAM];
+function find(t){const h=[];ITEMS.forEach(i=>{let s=0;i.k.forEach(k=>{if(t.includes(k))s=Math.max(s,k.length)});if(s)h.push([i,s])});h.sort((a,b)=>b[1]-a[1]);return h.map(x=>x[0])}
+const NUM={a:1,an:1,one:1,two:2,three:3,four:4,five:5,six:6,dozen:12,couple:2};
+const qtyIn=t=>{const m=t.match(/\b(\d{1,2}|a|an|one|two|three|four|five|six|dozen|couple)\b/);return m?(NUM[m[1]]||parseInt(m[1])||1):1};
+function pitch(i){const p=byId[PAIR[i.id]];if(p&&!bag.some(b=>b.id===p.id)){lastSug=p.id;return{h:`<br><br>Chris pairs it with a <b>${p.n.toLowerCase()}</b>, ${money(p.p)}. Add one?`,c:[{l:"Yes, add it",a:"add:"+p.id},{l:"View bag",a:"bag"},{l:"Keep browsing",a:"looks"}]}}return{h:" Anything else?",c:[{l:"Check out",a:"checkout"},{l:"Add a coffee",a:"coffee"}]}}
+function doAdd(i,q){
+  if(needsSheet(i)){bot(`Let's make your ${i.n.toLowerCase()} just right. Opening the options now.`);setTimeout(()=>{closeChat();openSheet(i.id)},800);return}
+  if(i.cat==="cakes"){bot(`The ${i.n.toLowerCase()} is made to order. I'll open the couture cake builder with it selected.`);setTimeout(()=>{closeChat();pickCake(i.id)},1000);return}
+  if(addItem(i.id,q)){const p=pitch(i);bot(`Done. ${q>1?q+" ×":"One"} <b>${i.n.toLowerCase()}</b> is in your bag.`+p.h,p.c)}
+  else bot(i.stock?`Only ${i.stock} left today. Want those?`:`The ${i.n.toLowerCase()} sold out this morning. The <b>brioche custard bun</b> is the next best thing.`,i.stock?[{l:`Add ${i.stock}`,a:`add ${i.stock} ${i.k[0]}`}]:addChips([byId.custard]))}
+function startHandoff(reason){handoff={step:"name",reason:reason||""};bot("I'll pass this to Chris's team. They reply by text. First, what's your name?",[{l:"Cancel",a:"cancel"}])}
+function stepHandoff(t,raw){
+  if(/^(cancel|never ?mind|stop)$/i.test(t)){handoff=null;bot("No problem, cancelled. Anything else I can help with?",BASE.slice(0,3));return}
+  if(handoff.step==="name"){handoff.name=raw.trim().slice(0,40);handoff.step="phone";bot(`Thanks, ${esc(handoff.name.split(" ")[0])}. What mobile number should they text?`);return}
+  if(handoff.step==="phone"){if(raw.replace(/\D/g,"").length<10){bot("That doesn't look like a full number. Please send a 10-digit mobile number.");return}
+    handoff.phone=raw.trim();handoff.step="q";if(handoff.reason){stepHandoff("send","send");return}bot("And what do you need help with?");return}
+  if(handoff.step==="q"){const q=/^send$/i.test(t)&&handoff.reason?handoff.reason:raw.trim();const s=nextOpen();
+    bot(`Sent to the team. They'll text ${esc(handoff.phone)} ${s.open?"usually within 15 minutes":"when the bakery opens "+dayName(s.date,true)+" at "+fmtTime(s.at)}.`,[{l:"Keep browsing",a:"looks"}]);
+    const hn=handoff.name,hp=handoff.phone;setTimeout(()=>phoneAlert("Mila needs a hand",`${esc(hn)} (${esc(hp)}) asks: "${esc(q.slice(0,140))}"`),1200);
+    handoff=null;misses=0}}
+function handle(raw){const t=raw.toLowerCase().trim();
+  if(handoff){stepHandoff(t,raw);return}
+  if(t==="team"){startHandoff("");return}
+  if(t==="cancel"){bot("Cancelled.",BASE.slice(0,3));return}
+  if(t.startsWith("add:")){doAdd(byId[t.slice(4)],1);return}
+  if(t.startsWith("go:")){closeChat();document.getElementById(t.slice(3)).scrollIntoView();return}
+  if(t.startsWith("pair ")){const i=byId[t.slice(5)];if(i){const p=byId[PAIR[i.id]]||byId.cortado;lastSug=p.id;bot(`With the ${i.n.toLowerCase()}, Chris pairs a <b>${p.n.toLowerCase()}</b>, ${money(p.p)}.`,[{l:"Add "+p.n.toLowerCase(),a:"add:"+p.id},{l:"Add the "+i.n.toLowerCase(),a:"add:"+i.id}]);return}}
+  if(/^(yes|yeah|yep|sure|ok|okay|please|y)\b/.test(t)&&lastSug){const i=byId[lastSug];lastSug=null;doAdd(i,1);return}
+  if(/^(no|nope|nah|not now)\b/.test(t)){lastSug=null;bot("Of course. Whenever you're ready, I'll check you out in a few taps.",[{l:"Check out",a:"checkout"},{l:"Keep browsing",a:"looks"}]);return}
+  if(/\b(human|person|someone|staff|team|manager|talk to|speak to|call me|complaint|problem|issue|refund|wrong order|missing)\b/.test(t)){startHandoff(raw.length>12?raw:"");return}
+  if(/\b(allerg|nut|peanut|celiac|dairy.free|egg)/.test(t)){bot("Everything is made in one kitchen that handles wheat, tree nuts, dairy and eggs, so cross-contact is possible. For a serious allergy, the team should answer you directly.",[TEAM,{l:"Call the bakery",a:"call"},{l:"Gluten-free picks",a:"gluten free"}]);return}
+  if(t==="call"){bot("Call <a href='tel:+17724928526'>(772) 492-8526</a> during open hours.");return}
+  if(/\b(cart|bag|basket|total)\b/.test(t)&&!/add/.test(t)){if(!count()){bot("Your bag is empty. Want to see the runway looks?",BASE.slice(0,1));return}bot(`${count()} item${count()>1?"s":""}, ${money(subtotal())} before tax.`,[{l:"Check out",a:"checkout"},{l:"Add a coffee",a:"coffee"}]);return}
+  if(/\b(checkout|check out|pay|place (my |the )?order|that's all|thats all|done)\b/.test(t)){if(!count()){bot("Nothing in the bag yet. Shall I show you the runway looks?",BASE.slice(0,1));return}bot("Opening your bag. Pick a pickup time and you're set.");setTimeout(()=>{closeChat();openBag()},900);return}
+  const found=find(t),wants=/\b(add|get|want|order|take|i'?ll have|i'd like|give me|grab)\b/.test(t)||/^\d/.test(t);
+  if(found.length&&wants){misses=0;doAdd(found[0],qtyIn(t));return}
+  if(/\b(cater|office|meeting|event|party|group|hors|boat|wedding)\b/.test(t)){bot("For groups: sweets trays from $8 a guest, quiche brunch from $16, lunch platters from $19, and custom hors d'oeuvres and dessert tables. For anything big, the team will plan it with you.",[{l:"Request a quote",a:"go:catering"},TEAM]);return}
+  if((/\b(birthday|custom|cakes?|shower|anniversary|celebrat)/.test(t))&&!found.length){bot("Every cake in the collection can be made to measure, from 6 inch to a half sheet, starting at $42. Two days' notice and a 50% deposit. Look 01, the Earl Grey with Parisian buttercream, is Chris's showpiece.",[{l:"Open the cake builder",a:"go:cakes"},{l:"Order Look 01",a:"add:earlgrey"}]);return}
+  if(found.length){misses=0;const i=found[0];lastSug=i.id;bot(`<b>${i.n}</b>${i.look?`, Look ${pad2(i.look)}`:""}. ${money(i.p)}. ${i.d}${i.stock===0?" Sold out today.":""} Approved by Chris.`,i.stock===0?BASE:[{l:i.cat==="cakes"?"Order this cake":"Add to bag",a:"add:"+i.id},{l:"What goes with it?",a:"pair "+i.id}]);return}
+  if(/\b(looks?|runway|show|collection|signature|popular|best|recommend|favorite|favourite|suggest|what should)\b/.test(t)){const l=LOOKS.map(x=>byId[x.id]);bot("This season's runway:<ul>"+l.map(li).join("")+"</ul>Regulars also swear by the s'mores croissant, usually gone before noon.",[{l:"Watch the show",a:"go:show"},...addChips([byId.salmon,byId.smores])]);return}
+  if(/\b(gluten|gf|wheat)\b/.test(t)){const l=ITEMS.filter(i=>i.t.includes("gf"));bot("Made without gluten:<ul>"+l.map(li).join("")+"</ul>",addChips(l.filter(i=>i.cat!=="cakes")));return}
+  if(/\b(vegan|plant|dairy)\b/.test(t)){const l=ITEMS.filter(i=>i.t.includes("pb"));bot("Plant-based:<ul>"+l.map(li).join("")+"</ul>Almond milk works in any coffee.",addChips(l.filter(i=>i.cat!=="cakes")));return}
+  if(/\b(sweet|dessert|treat|cookie|pastr|chocolate)/.test(t)){const l=[byId.smores,byId.berrytart,byId.brownie,byId.espcookie,byId.lemonbar];bot("From the sweet side of the collection:<ul>"+l.map(li).join("")+"</ul>",addChips(l));return}
+  if(/\b(lunch|savory|savoury|hungry|breakfast|eat|meal|quiche)\b/.test(t)){const l=ITEMS.filter(i=>i.cat==="quiche"||i.cat==="wraps");bot("Savory, served until close:<ul>"+l.map(li).join("")+"</ul>",addChips([byId.salmon,byId.italwrap,byId.lorraine]));return}
+  if(/\b(coffee|drink|espresso|caffeine|latte)\b/.test(t)){const l=[byId.capp,byId.cortado,byId.flatwhite,byId.icedlatte,byId.redeye];bot("Single-origin, pulled when you arrive:<ul>"+l.map(li).join("")+"</ul>Pistachio milk is the house upgrade.",addChips(l));return}
+  if(/\b(healthy|light|smoothie|fresh)\b/.test(t)){bot("<b>Tropical Green Goddess</b>, Look 06. Mango, pineapple, banana and spinach, plant-based and gluten-free. $9.50.",addChips([byId.goddess,byId.medwrap]));return}
+  if(/\b(hour|open|close|when)\b/.test(t)){const s=nextOpen();bot(`Wednesday to Saturday 7:30 AM to 3 PM, Sunday 8 AM to 2 PM, closed Monday and Tuesday. ${s.open?"Open now until "+fmtTime(s.close)+".":"Next opening: "+dayName(s.date,true)+" at "+fmtTime(s.at)+". You can order now for then."}`,[{l:"Order for pickup",a:"looks"}]);return}
+  if(/\b(where|address|location|park|direction)\b/.test(t)){bot("2060 6th Avenue, Vero Beach. Online orders are at the front counter. <a href='https://maps.app.goo.gl/svnzvHG6qHfwWWLG7' target='_blank' rel='noopener'>Open in Maps</a>");return}
+  if(/\b(deliver|delivery|ship|doordash|uber)\b/.test(t)){bot("Online orders are pickup for now, usually ready in about 20 minutes during open hours. Shall I start one?",BASE.slice(0,2));return}
+  if(/\b(how long|ready|pickup|pick up|wait)\b/.test(t)){bot("About 20 minutes during open hours. Couture cakes need two days. You choose the exact time at checkout.");return}
+  if(/\b(music|song|playing)\b/.test(t)){bot("That's the show's soundtrack. Chris came from live entertainment, so M Bakeri always has music. Turn it on or off at the top of the page.");return}
+  if(/\b(owner|founder|who|chris|model)\b/.test(t)){bot("M Bakeri is Chris Foster's collection. He modeled and ran a live-entertainment production company before turning to the kitchen, and every item carries his sign-off.",[{l:"Meet the designer",a:"go:designer"}]);return}
+  if(/\b(thank|thanks|merci)\b/.test(t)){bot("Avec plaisir. Enjoy the show.");return}
+  if(/\b(hi|hello|hey|bonjour|morning)\b/.test(t)){bot("Bonjour. Something sweet, something savory, or a great coffee?",[{l:"Sweet",a:"sweet"},{l:"Savory",a:"savory"},{l:"Coffee",a:"coffee"}]);return}
+  misses++;
+  if(misses>=2){bot("I'm not sure I can answer that one, but Chris's team can. Want me to pass it to them?",[{l:"Yes, message the team",a:"team"},{l:"Show me the menu",a:"looks"}]);handoffReason=raw;return}
+  bot("I can help you choose from the collection, find gluten-free or plant-based options, set up a couture cake or catering, or pass a question to the team.",BASE)}
+let handoffReason="";
+function openChat(){document.getElementById("chat").classList.add("on");document.getElementById("ask").style.display="none";document.getElementById("teaser").classList.remove("on");
+  if(!greeted){greeted=true;const s=nextOpen();bot(`Bonjour, I'm Mila. ${s.open?"The case is full right now.":"We're closed at the moment, but you can order ahead for "+dayName(s.date,true)+"."} Want to see this season's runway looks, or do you know what you're after?`,BASE)}
+  setTimeout(()=>document.getElementById("chatIn").focus(),60)}
+function closeChat(){document.getElementById("chat").classList.remove("on");document.getElementById("ask").style.display="flex"}
+function showTeaser(){if(greeted)return;const s=byId.smores;document.getElementById("teaserText").innerHTML=`Only <b>${s.stock} s'mores croissants</b> left from this morning's bake. Want me to hold one for you?`;document.getElementById("teaser").classList.add("on")}
+
+/* Events */
+document.addEventListener("click",e=>{
+  const a=e.target.closest("[data-add]");if(a){const i=byId[a.dataset.add];if(needsSheet(i))openSheet(i.id);else addItem(i.id,1);return}
+  const ck=e.target.closest("[data-cake]");if(ck){pickCake(ck.dataset.cake);return}
+  const q=e.target.closest("[data-q]");if(q){changeQty(+q.dataset.q,+q.dataset.d);return}
+  const tab=e.target.closest("[data-cat]");if(tab){activeCat=tab.dataset.cat;renderTabs();renderMenu();return}
+  const df=e.target.closest("[data-diet]");if(df){diet=diet===df.dataset.diet?null:df.dataset.diet;renderTabs();renderMenu();return}
+  const ch=e.target.closest("[data-chip]");if(ch){me(ch.textContent);ch.parentElement.remove();const act=ch.dataset.chip;if(act==="team"&&handoffReason){startHandoff(handoffReason);handoffReason=""}else handle(act);return}
+  if(e.target.id==="placeOrder"){placeOrder();return}
+  if(e.target.id==="newOrder"){view="bag";closeBag();document.getElementById("collection").scrollIntoView();return}
+  if(e.target.id==="sheetAdd"){const o=sheetOpts(),i=sheetItem;if(addItem(i.id,1,{flavor:o.flavor,milk:o.milk})){closeSheet();const p=byId[PAIR[i.id]];if(p&&!bag.some(b=>b.id===p.id))setTimeout(()=>toast(`Chris pairs it with the ${p.n.toLowerCase()}`),2000)}return}
+  if(e.target.id==="sheetCancel"||e.target.id==="sheetBg"){closeSheet();return}
+  if(e.target.closest("#alert")){document.getElementById("alert").classList.remove("on")}
+});
+document.addEventListener("change",e=>{if(e.target.name==="pay"){payMode=e.target.value;renderBag()}if(e.target.name==="sfl"||e.target.name==="smk"){const o=sheetOpts();document.getElementById("sheetAdd").textContent=`Add for ${money(sheetItem.p+o.extra)}`}});
+document.getElementById("enterMusic").onclick=()=>enter(true);
+document.getElementById("enterQuiet").onclick=()=>enter(false);
+document.getElementById("soundBtn").onclick=()=>setSound(!Music.on);
+document.getElementById("prevLook").onclick=()=>{setAuto(false);goLook(curLook-1)};
+document.getElementById("nextLook").onclick=()=>{setAuto(false);goLook(curLook+1)};
+document.getElementById("autoShow").onclick=()=>setAuto(document.getElementById("autoShow").getAttribute("aria-pressed")!=="true");
+let rs;runway().addEventListener("scroll",()=>{cancelAnimationFrame(rs);rs=requestAnimationFrame(markActive)},{passive:true});
+window.addEventListener("resize",markActive);
+document.getElementById("bagBtn").onclick=openBag;document.getElementById("closeBag").onclick=closeBag;document.getElementById("scrim").onclick=closeBag;
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeBag();closeSheet();if(document.getElementById("chat").classList.contains("on"))closeChat()}});
+document.getElementById("cakeForm").addEventListener("change",updateCake);
+document.getElementById("cakeForm").addEventListener("submit",e=>{e.preventDefault();bag.push({k:"cake-"+Date.now(),id:"cake",custom:cakeVals(),q:1});changed();toast("Couture cake added");openBag()});
+document.getElementById("caterForm").addEventListener("submit",e=>{e.preventDefault();const n=cName.value.trim(),em=cEmail.value.trim(),d=cDate.value,g=+cGuests.value,err=document.getElementById("cErr");
+  if(!n||!/\S+@\S+\.\S+/.test(em)||!d||!(g>=6)){err.textContent="Add your name, a valid email, the event date and at least 6 guests.";return}
+  document.getElementById("caterWrap").innerHTML=`<div class="done"><h3 style="font-size:1.7rem;margin-bottom:10px;font-style:italic">Quote requested</h3><p style="margin:0;color:var(--muted)">Thank you, ${esc(n.split(" ")[0])}. We'll email ${esc(em)} within one business day with a menu and price for ${g} guests.</p></div>`;
+  setTimeout(()=>phoneAlert("New catering request",`${esc(n)}, ${g} guests on ${esc(d)}. ${esc(cNotes.value.trim().slice(0,100))}`),900)});
+document.getElementById("askBtn").onclick=openChat;document.getElementById("closeChat").onclick=closeChat;
+document.getElementById("chatForm").addEventListener("submit",e=>{e.preventDefault();const i=document.getElementById("chatIn"),v=i.value.trim();if(!v)return;i.value="";me(v);handle(v)});
+document.getElementById("teaserX").onclick=e=>{e.stopPropagation();document.getElementById("teaser").classList.remove("on")};
+document.getElementById("teaser").onclick=e=>{if(e.target.id!=="teaserX")openChat()};
+
+/* Init */
+bag.forEach(b=>{const i=byId[b.id];if(i&&i.stock!=null)i.stock=Math.max(0,i.stock-b.q)});
+document.getElementById("bagCount").textContent=count();
+renderStatus();renderTicker();renderRunway();renderTabs();renderMenu();buildCake();requestAnimationFrame(markActive);
+try{if(sessionStorage.getItem("mb-entered")==="1"){const c=document.getElementById("curtain");c.classList.add("open","gone");document.body.classList.remove("locked");setTimeout(showTeaser,6000)}}catch(e){}
+</script>
+</body>
+</html>
