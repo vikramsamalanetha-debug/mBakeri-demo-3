@@ -168,8 +168,13 @@ nav.main a:hover{color:var(--ink)}
 .cat-h{position:sticky;top:150px;align-self:start}
 .cat-h h3{font-size:2.3rem;font-style:italic}
 .cat-h p{color:var(--muted);margin:10px 0 0;font-size:.95rem}
-.row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px dotted color-mix(in srgb,var(--ink) 25%,transparent)}
-.row .th{width:58px;height:58px;border-radius:50%}
+.row{display:grid;grid-template-columns:112px 1fr auto;gap:22px;align-items:center;padding:20px 0;border-bottom:1px dotted color-mix(in srgb,var(--ink) 25%,transparent)}
+.row .th{width:112px;height:112px;border-radius:4px}
+.row .th.noimg::after{font-size:.86rem;line-height:1.25}
+.row .th.soon{background:linear-gradient(135deg,var(--sand),#E7DCC8)}
+.row .th.soon::after{color:var(--sea)}
+.ph .smp{position:absolute;left:5px;bottom:5px;font-size:.6rem;line-height:1;padding:3px 5px;border-radius:2px;background:rgba(255,255,255,.88);color:#0E2E3A;font-family:var(--sans)}
+.ph.noimg .smp{display:none}
 .row.nt{grid-template-columns:1fr auto}
 .row h4{font-size:1.22rem;font-weight:500;line-height:1.25;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
 .row .ds{margin:3px 0 0;color:var(--muted);font-size:.93rem;max-width:56ch}
@@ -187,7 +192,7 @@ nav.main a:hover{color:var(--ink)}
 .tag{font-size:.74rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
 .tag.gf,.tag.pb,.tag.v{border-color:color-mix(in srgb,var(--aqua) 55%,transparent);color:var(--aqua)}
 .left{font-size:.8rem;color:var(--coral)}
-@media (max-width:860px){.cat{grid-template-columns:1fr;gap:10px;padding:40px 0}.cat-h{position:static}.row{grid-template-columns:auto 1fr;gap:12px}.row.nt{grid-template-columns:1fr}.row .th{width:50px;height:50px}.row .side{grid-column:1/-1;justify-content:space-between}.row.nt .side{grid-column:1}}
+@media (max-width:860px){.cat{grid-template-columns:1fr;gap:10px;padding:40px 0}.cat-h{position:static}.row{grid-template-columns:84px 1fr;gap:14px}.row .th{width:84px;height:84px}.row .side{grid-column:1/-1;justify-content:space-between}.row.nt .side{grid-column:1}}
 
 /* Couture cakes */
 .cakes{padding:110px 0;background:var(--sand)}
@@ -488,7 +493,7 @@ blockquote.q cite{font-style:normal;color:var(--muted);font-size:.92rem}
         <div><h3>2060 6th Avenue</h3><p>Vero Beach, FL 32960<br><a href="tel:+17724928526">(772) 492-8526</a><br><a href="https://maps.app.goo.gl/svnzvHG6qHfwWWLG7" target="_blank" rel="noopener">Get directions</a><br><a href="https://www.instagram.com/mbakeri670/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/mbakerillc" target="_blank" rel="noopener">Facebook</a></p></div>
         <div><h3>Hours</h3><dl class="hours"><dt>Wed to Sat</dt><dd>7:30 AM to 3:00 PM</dd><dt>Sunday</dt><dd>8:00 AM to 2:00 PM</dd><dt>Mon, Tue</dt><dd>Closed</dd></dl></div>
       </div>
-      <div class="foot"><span>© 2026 M Bakeri LLC. Demo concept: look numbers, approval marks and bakery prices are placeholders for Chris to confirm; drink prices are from mbakerillc.com.</span><span>A product of <a href="https://litamerica.net" target="_blank" rel="noopener">LIT America</a></span></div>
+      <div class="foot"><span>© 2026 M Bakeri LLC. Demo concept: look numbers, approval marks and bakery prices are placeholders for Chris to confirm; drink prices are from mbakerillc.com. Photos marked "Sample photo" are free Unsplash images standing in for M Bakeri's own photography.</span><span>A product of <a href="https://litamerica.net" target="_blank" rel="noopener">LIT America</a></span></div>
     </div>
   </section>
 </main>
@@ -518,6 +523,9 @@ const IMG={cakes:U+"2023/08/cakes-1a.jpg",cookies:T+"pistachio-cookies-qywo0pi8a
  drip:U+"2024/08/drip.png",redeye:U+"2024/08/redeye.jpg",latte:U+"2024/08/latte.jpg",cappu:U+"2024/08/cappu.jpg",flatwhite:U+"2024/08/flatwhite.jpg",icedcream:U+"2024/08/iced-cream.jpg",macchiato:U+"2024/08/macchiato.jpg",icedred:U+"2024/08/iced-red.jpg",hotchoc:U+"2024/08/hotchoc.jpg",icetea:U+"2024/08/ice-tea.jpg",milk:U+"2024/08/old-milk.jpg",sparkling:U+"2024/08/sparkling.jpg",water:U+"2024/08/bottle-water.jpg"};
 const localOf=u=>"images/"+u.split("/").pop();
 const ph=(src,alt,cls="")=>`<div class="ph ${cls}" data-alt="${alt}"><img src="${localOf(src)}" data-remote="${src}" alt="${alt}" loading="lazy" onerror="mbImg(this)"></div>`;
+const STOCK={smores:"K_Fey0KMSqk",custard:"2i9Jl3DdRYM",triple:"IYwyDwSHmPE",nextcarrot:"OXQALgjpwkc",birthday:"nN_AjO-Pjgg",rosemary:"8DWN4Gui9Yk",espcookie:"q_buBm5YvzA",brownie:"tDoHiqXl9b8",butterscotch:"Wo_JUaWp7Dg",veganchip:"YUUaapeq5Zo",veganoat:"W8blK2FRmBw",lorraine:"Jw4rKiZFiSM",medquiche:"lJLXlh7KT38",sausage:"ZPmla97f7fk",banwal:"BCyJBIfXTe4",rasptart:"SyBVbjY5tFM",medwrap:"Lyt6AJZmUWs",chicken:"fvyaZaV3umY",blt:"FaNMjbay9g0",espresso:"6ZnhM-xBpos",cortado:"9Iv-_lU4xyA",coldbrew:"eNEhkC23WMA",icedlatte:"LJPAmUnE-QM",icedcapp:"OSLnJG62isk"};
+const stockUrl=id=>`https://unsplash.com/photos/${id}/download?w=800`;
+const phR=(src,alt,cls="")=>`<div class="ph ${cls}" data-alt="${alt}"><img src="${src}" alt="${alt}" loading="lazy" onerror="this.parentNode.classList.add('noimg')"><span class="smp">Sample photo</span></div>`;
 const CATS=[
  {id:"tarts",name:"Pastries and tarts",note:"Croissants, custard buns and French tarts, baked at dawn."},
  {id:"cakes",name:"Artisanal cakes",note:"Whole cakes, cut to order. Two days' notice."},
@@ -716,7 +724,8 @@ function rowHTML(i){
   const pill=(i.look?`<span class="pill lk">Look ${pad2(i.look)}</span>`:"")+(i.t.includes("best")?`<span class="pill best">Bestseller</span>`:i.t.includes("new")?`<span class="pill new">New</span>`:"");
   const tags=i.t.filter(x=>TAGS[x]).map(x=>`<span class="tag ${x}">${TAGS[x]}</span>`).join("");
   const btn=i.cat==="cakes"?`<button class="plus wide" data-cake="${i.id}">Order</button>`:`<button class="plus" data-add="${i.id}" aria-label="Add ${i.n}" ${i.stock===0?"disabled":""}>+</button>`;
-  return`<div class="row ${i.thumb?"":"nt"}">${i.thumb?ph(i.thumb,i.n,"th"):""}<div><h4>${i.n} ${pill}</h4>${i.d?`<p class="ds">${i.d}</p>`:""}<div class="meta">${seal}${tags}${stockHTML(i)}${i.cat==="cakes"?`<span class="tag">Pre-order</span>`:""}</div></div><div class="side"><span class="price">${i.cat==="cakes"?"from "+money(i.p-10):money(i.p)}</span>${btn}</div></div>`}
+  const photo=i.thumb?ph(i.thumb,i.n,"th"):i.lookImg?ph(i.lookImg,i.n,"th"):STOCK[i.id]?phR(stockUrl(STOCK[i.id]),i.n,"th"):`<div class="ph th noimg soon" data-alt="${i.n}"></div>`;
+  return`<div class="row">${photo}<div><h4>${i.n} ${pill}</h4>${i.d?`<p class="ds">${i.d}</p>`:""}<div class="meta">${seal}${tags}${stockHTML(i)}${i.cat==="cakes"?`<span class="tag">Pre-order</span>`:""}</div></div><div class="side"><span class="price">${i.cat==="cakes"?"from "+money(i.p-10):money(i.p)}</span>${btn}</div></div>`}
 function renderTabs(){document.getElementById("tabs").innerHTML=`<button class="tab" data-cat="all" aria-pressed="${activeCat==="all"}">Everything</button>`+CATS.map(c=>`<button class="tab" data-cat="${c.id}" aria-pressed="${activeCat===c.id}">${c.name}</button>`).join("")+`<span class="sep"></span>`+["gf","pb"].map(f=>`<button class="tab filter" data-diet="${f}" aria-pressed="${diet===f}">${TAGS[f]}</button>`).join("")}
 function renderMenu(){let html="";
   CATS.forEach(c=>{if(activeCat!=="all"&&activeCat!==c.id)return;const list=ITEMS.filter(i=>i.cat===c.id&&(!diet||i.t.includes(diet)));if(diet&&!list.length&&activeCat==="all")return;
